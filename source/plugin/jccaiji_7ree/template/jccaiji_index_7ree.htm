@@ -1,0 +1,41 @@
+{subtemplate common/header}
+<!--
+	ID: jingcai_7ree
+	[www.7ree.com] (C)2007-2014 7ree.com.
+	This is NOT a freeware, use is subject to license terms
+	Update: 14:28 2014/12/29
+	Agreement: http://addon.discuz.com/?@7.developer.doc/agreement_7ree_html
+	More Plugins: http://addon.discuz.com/?@7ree
+-->
+<div id="pt" class="bm cl">
+<div class="z">
+<a href="./" class="nvhm">{$_G['setting']['bbname']}</a><em>&rsaquo;</em><a href="{$_G['siteurl']}">{$_G['setting']['bbname']}</a><em>&rsaquo;</em><a href="plugin.php?id=jingcai_7ree">{$navtitle}</a>
+</div> 
+</div>
+
+
+
+
+<div id="ct" class="wp cl n">
+<div class="mn">
+				<ul class="tb cl">
+            <li <!--{if !$_GET['ac_7ree'] && !$_GET['finish_7ree']}--> class="a"<!--{/if}--> ><a href="plugin.php?id=jingcai_7ree:jingcai_7ree"><span>{lang jingcai_7ree:htm_lang_jingcaidating_7ree}</span></a></li>
+            <li <!--{if !$_GET['ac_7ree'] && $_GET['finish_7ree']==1}--> class="a"<!--{/if}--> ><a href="plugin.php?id=jingcai_7ree:jingcai_7ree&finish_7ree=1"><span>{lang jingcai_7ree:htm_lang_wangqijingcai_7ree}</span></a></li>
+            <li <!--{if $_GET['ac_7ree'] == '1'}--> class="a"<!--{/if}--> ><a href="plugin.php?id=jingcai_7ree:jingcai_7ree&ac_7ree=1" title="{lang jingcai_7ree:htm_lang_lingqujiangli_7ree}"><span>{lang jingcai_7ree:htm_lang_wodejingcai_7ree}</span></a></li>
+ 				</ul>           
+            
+			<div>            
+            
+ 			<!--{if $_GET['ac_7ree'] == ""}-->
+			{template jccaiji_7ree:home_7ree}
+			<!--{elseif $_GET['ac_7ree'] == "1"}-->
+			
+ 			<!--{/if}-->
+	    	</div>           
+            
+            
+
+    </div>
+</div>	
+
+{subtemplate common/footer}

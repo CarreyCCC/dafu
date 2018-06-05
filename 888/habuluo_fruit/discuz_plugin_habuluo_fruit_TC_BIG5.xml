@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Plugin]]></item>
+	<item id="Version"><![CDATA[X2.5]]></item>
+	<item id="Time"><![CDATA[2016-07-31 14:41]]></item>
+	<item id="From"><![CDATA[CAOGEN8 (http://www.cgzz8.com/)]]></item>
+	<item id="Data">
+		<item id="plugin">
+			<item id="available"><![CDATA[1]]></item>
+			<item id="adminid"><![CDATA[1]]></item>
+			<item id="name"><![CDATA[¤ôªG¼Ö¶é]]></item>
+			<item id="identifier"><![CDATA[habuluo_fruit]]></item>
+			<item id="description"><![CDATA[¤ôªG¼Ö¶é
+«¢³¡¸¨Åé¨|ºô
+ºô§}¡Jhttp://www.caogen8.co]]></item>
+			<item id="datatables"><![CDATA[]]></item>
+			<item id="directory"><![CDATA[habuluo_fruit/]]></item>
+			<item id="copyright"><![CDATA[«¢³¡¸¨Åé¨|ºôhttp://www.caogen8.coª©Åv©Ò¦³]]></item>
+			<item id="version"><![CDATA[6.4]]></item>
+			<item id="__modules">
+				<item id="0">
+					<item id="name"><![CDATA[habuluo_fruit]]></item>
+					<item id="menu"><![CDATA[¤ôªG¼Ö¶é]]></item>
+					<item id="url"><![CDATA[plugin.php?id=habuluo_fruit]]></item>
+					<item id="type"><![CDATA[1]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="1">
+					<item id="name"><![CDATA[admincp]]></item>
+					<item id="menu"><![CDATA[­q³æ¬d¸ß]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="2">
+					<item id="name"><![CDATA[admin_report]]></item>
+					<item id="menu"><![CDATA[²Î­p³øªí]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[1]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+			</item>
+		</item>
+		<item id="version"><![CDATA[X1.5,X2,X2.5,X3,X3.1,X3.2,F1.0]]></item>
+		<item id="var">
+			<item id="0">
+				<item id="displayorder"><![CDATA[0]]></item>
+				<item id="title"><![CDATA[¨Ï¥Î¿n¤À]]></item>
+				<item id="description"><![CDATA[¯¸ªø¥æ¬yQQ¸s¡J306115775]]></item>
+				<item id="variable"><![CDATA[use_cash]]></item>
+				<item id="type"><![CDATA[extcredit]]></item>
+				<item id="value"><![CDATA[2]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="1">
+				<item id="displayorder"><![CDATA[1]]></item>
+				<item id="title"><![CDATA[³Ì¤j§ëª`ª÷ÃB]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[max_bet]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[9999]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="2">
+				<item id="displayorder"><![CDATA[2]]></item>
+				<item id="title"><![CDATA[§@¹ú³]¸m]]></item>
+				<item id="description"><![CDATA[0-100¡A0¬°¤£¤¤¥X¤j¼ú¡A100¬°¤£§@¹ú¡C]]></item>
+				<item id="variable"><![CDATA[del_rate]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[78]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="3">
+				<item id="displayorder"><![CDATA[4]]></item>
+				<item id="title"><![CDATA[­µ¼Ö¶}Ãö]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[mu_yn]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="4">
+				<item id="displayorder"><![CDATA[5]]></item>
+				<item id="title"><![CDATA[¼s§i³]¸m]]></item>
+				<item id="description"><![CDATA[(ª`·N¡J¦bIE6¤U¡A¨Ï¥Î¤@¨Ç¼s§iºÞ®a¥N½X³ø¿ù¡A¦pªG¨S¥²­n¡A¦¹¼s§i¯dªÅ)
+¥Ø«e¥u¤ä«ù¼s§i¥N½X¡A¦p¦Ê«×¼s§iºÞ®a¥N½X¡A¯dªÅ«h¤£Åã¥Ü¼s§i¡C]]></item>
+				<item id="variable"><![CDATA[ad_code]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="5">
+				<item id="displayorder"><![CDATA[6]]></item>
+				<item id="title"><![CDATA[»¡©úÃì±µ]]></item>
+				<item id="description"><![CDATA[¤ä«ùHTML¡A®æ¦¡¬°¡J<a target="_blank" title="¤ôªG¼Ö¶é Author: CAOGEN8" href="http://www.caogen8.co/misc.php?mod=faq&amp;action=faq&amp;id=18">
+HaBuLuo ¤ôªG¼Ö¶é For X2.5! «¢³¡¸¨Åé¨|ºôºc«Ø³Ì¦nªºÅé¨|¶}©ñ¥­¥x¡i¤ôªG¼Ö¶é³W«h»¡©ú¡j</a>]]></item>
+				<item id="variable"><![CDATA[rule_link]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[<a target="_blank" title="¤ôªG¼Ö¶é Author: CAOGEN8" href="http://www.caogen8.co/misc.php?mod=faq&amp;action=faq&amp;id=18">
+HaBuLuo ¤ôªG¼Ö¶é For X2.5! «¢³¡¸¨Åé¨|ºôºc«Ø³Ì¦nªºÅé¨|¶}©ñ¥­¥x¡i¤ôªG¼Ö¶é³W«h»¡©ú¡j</a>]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+		</item>
+		<item id="language">
+			<item id="scriptlang">
+				<item id="english"><![CDATA[chinese]]></item>
+				<item id="sp_username"><![CDATA[¥Î¤á¦W]]></item>
+				<item id="sp_search"><![CDATA[·j¯Á]]></item>
+				<item id="sp_orders"><![CDATA[§ëª`¤º®e]]></item>
+				<item id="sp_order_money"><![CDATA[§ëª`ª÷ÃB]]></item>
+				<item id="sp_win_money"><![CDATA[Ä¹§Q]]></item>
+				<item id="sp_time"><![CDATA[§ëª`®É¶¡]]></item>
+				<item id="sp_orders_disp"><![CDATA[§ëª`¤º®e¤À§O¹ïÀ³¡JBAR,77,Âù¬P,¦è¥Ê,¹aÅL,¤ì¥Ê,¾í¤l,°¦ªG]]></item>
+				<item id="sp_beg_end"><![CDATA[®É¶¡½d³ò]]></item>
+				<item id="sp_max_username"><![CDATA[Ä¹§Q³Ì¦h20¥Î¤á]]></item>
+				<item id="sp_num_orders"><![CDATA[ª`³æ¼Æ]]></item>
+				<item id="sp_orders_money"><![CDATA[§ëª`Á`ª÷ÃB]]></item>
+				<item id="sp_wins_money"><![CDATA[§ëª`Á`Ä¹§Q]]></item>
+				<item id="sp_user_wins"><![CDATA[¥Î¤áÁ`Ä¹§Q]]></item>
+				<item id="sp_web_win"><![CDATA[ºô¯¸Á`Ä¹§Q]]></item>
+				<item id="name"><![CDATA[¤ôªG¼Ö¶é]]></item>
+			</item>
+			<item id="templatelang">
+				<item id="english"><![CDATA[chinese]]></item>
+				<item id="name"><![CDATA[¤ôªG¼Ö¶é]]></item>
+				<item id="disp"><![CDATA[«¢³¡¸¨Åé¨|¡i¤ôªG¼Ö¶é³W«h»¡©ú¡j]]></item>
+				<item id="nohave"><![CDATA[¤£¦s¦b]]></item>
+				<item id="getmoney"><![CDATA[±o¤À]]></item>
+				<item id="money"><![CDATA[¿n¤À]]></item>
+				<item id="gamedisp"><![CDATA[¥Ñ¤_ÂsÄý¾¹°ÝÃD¡A³y¦¨«È¤áºÝ»PªA°ÈºÝµ²ªG¤£¦P¡A¤@¤Á¥HªA°ÈºÝ¬°·Ç¡A³Ì²×¸ÑÄÀÅvÂk¥»¯¸©Ò¦³¡IÁÂÁÂ²z¸Ñ¦X§@¡C]]></item>
+				<item id="btnreset"><![CDATA[­«¸m]]></item>
+				<item id="btnstart"><![CDATA[¶}©l]]></item>
+				<item id="notorder"><![CDATA[©|¥¼¤Uª`¡A½Ð¥ý¤Uª`¡I]]></item>
+				<item id="nomoney"><![CDATA[±zªº¿n¤À¤£°÷¤Uª`¡I]]></item>
+				<item id="errors"><![CDATA[µo¥Í¿ù»~¡I]]></item>
+				<item id="login"><![CDATA[±z¥¼µn¿ý¡A½Ð¥ýµn¿ý]]></item>
+				<item id="gx"><![CDATA[®¥³ß·|­û]]></item>
+				<item id="zd"><![CDATA[«l¤¤]]></item>
+				<item id="yuan"><![CDATA[¤¸]]></item>
+				<item id="error_order"><![CDATA[¥¼µn¿ý¡B§ëª`ª÷ÃB¿ù»~©Î§ëª`ª÷¤j¤_³Ì°ª­­ÃB¡J]]></item>
+			</item>
+			<item id="installlang">
+				<item id="english"><![CDATA[chinese]]></item>
+				<item id="delete_data_confirm"><![CDATA[¬O§_­n§R°£§ëª`°O¿ý]]></item>
+				<item id="delete_data_confirm_content"><![CDATA[¿ï¾Ü«á¡A±N·|§R°£§ëª`°O¿ý¡A¥BµLªk«ì´_¡I]]></item>
+			</item>
+		</item>
+		<item id="installfile"><![CDATA[install.php]]></item>
+		<item id="uninstallfile"><![CDATA[uninstall.php]]></item>
+		<item id="upgradefile"><![CDATA[upgrade.php]]></item>
+	</item>
+</root>

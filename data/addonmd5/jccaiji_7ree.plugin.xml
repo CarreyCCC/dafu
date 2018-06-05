@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Addon MD5]]></item>
+	<item id="ID"><![CDATA[jccaiji_7ree.plugin]]></item>
+	<item id="RevisionID"><![CDATA[46682]]></item>
+	<item id="SN"><![CDATA[2018060412tg27r1OB2B]]></item>
+	<item id="RevisionDateline"><![CDATA[1527458401]]></item>
+	<item id="Data">
+		<item id="/template/jccaiji_index_7ree.htm"><![CDATA[7389920f6ec1019cb9f932803265d487]]></item>
+		<item id="/template/home_7ree.htm"><![CDATA[d41d8cd98f00b204e9800998ecf8427e]]></item>
+		<item id="/template/index.htm"><![CDATA[d41d8cd98f00b204e9800998ecf8427e]]></item>
+		<item id="/cron/index.htm"><![CDATA[d41d8cd98f00b204e9800998ecf8427e]]></item>
+		<item id="/cron/cron_bfcaiji_7ree.inc.php"><![CDATA[0d0bebd3536d98668a1bfb4f6f3f03fd]]></item>
+		<item id="/cron/cron_jccaiji_7ree.inc.php"><![CDATA[bd2313fc3128441f52409f8a30420b0b]]></item>
+		<item id="/cron/cron_lqbfcaiji_7ree.inc.php"><![CDATA[670229f5651e085da5fb2558cac0b0f9]]></item>
+		<item id="/cron/cron_lqcaiji_7ree.inc.php"><![CDATA[4c6cc67d792ff7c75739f3f99ddf0c50]]></item>
+		<item id="/discuz_plugin_jccaiji_7ree_TC_BIG5.xml"><![CDATA[25d647743d8be4e9c3446dce39007e60]]></item>
+		<item id="/index.htm"><![CDATA[d41d8cd98f00b204e9800998ecf8427e]]></item>
+		<item id="/discuz_plugin_jccaiji_7ree_TC_UTF8.xml"><![CDATA[9a61cc7ffb30b10ded48dda733815fe0]]></item>
+		<item id="/discuz_plugin_jccaiji_7ree_SC_GBK.xml"><![CDATA[9e22dfaeb5bef4ad2845463039c85b78]]></item>
+		<item id="/discuz_plugin_jccaiji_7ree_SC_UTF8.xml"><![CDATA[20fde45725134a6a9b2bf2e745192904]]></item>
+		<item id="/more_7ree.inc.php"><![CDATA[c28aa7cf6acb5b5a411a50645c4aaf7a]]></item>
+	</item>
+</root>

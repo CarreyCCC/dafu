@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Addon MD5]]></item>
+	<item id="ID"><![CDATA[hwh_setmobileindex.plugin]]></item>
+	<item id="RevisionID"><![CDATA[67655]]></item>
+	<item id="SN"><![CDATA[2018060415gAPO45mJ9H]]></item>
+	<item id="RevisionDateline"><![CDATA[1472029201]]></item>
+	<item id="Data">
+		<item id="/admincp.inc.php"><![CDATA[056620091f6d439ace8dec52cd1c3eca]]></item>
+		<item id="/discuz_plugin_hwh_setmobileindex_TC_UTF8.xml"><![CDATA[772ba02bc2190db1cca5135eddddf9c8]]></item>
+		<item id="/discuz_plugin_hwh_setmobileindex_SC_GBK.xml"><![CDATA[cd0e61003c79b62305af943fc430c80f]]></item>
+		<item id="/discuz_plugin_hwh_setmobileindex_SC_UTF8.xml"><![CDATA[43f7015aec2d3202971274f379b2b535]]></item>
+		<item id="/hwh_setmobileindex.class.php"><![CDATA[9ae88f234fe3449507e0cb16d7f01954]]></item>
+		<item id="/discuz_plugin_hwh_setmobileindex_TC_BIG5.xml"><![CDATA[517d46becb023316971d76c3664a7d2e]]></item>
+	</item>
+</root>

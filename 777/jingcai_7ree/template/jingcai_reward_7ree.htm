@@ -1,0 +1,47 @@
+<table width="100%" border="0" cellpadding="5" cellspacing="0"  class="dt mtm">
+<tr class="colplural" >
+<th colspan="7"><h3>{lang jingcai_7ree:htm_lang_gonggao_7ree}</h3></th>
+</tr>
+<tr>
+<td colspan="7">
+<p>$notice_7ree</p>
+</td>
+</tr>
+        <tr class="colplural" >
+        <th>{lang jingcai_7ree:htm_lang_bianhao_7ree}</th><th>{lang jingcai_7ree:htm_lang_bisaimingcheng_7ree}</th><th>{lang jingcai_7ree:htm_lang_jingcaishijian_7ree}</th><th>{lang jingcai_7ree:htm_lang_jingcaiduiwu_7ree}</th><th>{lang jingcai_7ree:htm_lang_huoshengduiwu_7ree}</th><th> {lang jingcai_7ree:htm_lang_yuqijiangli_7ree} <span class="pipe">|</span> {lang jingcai_7ree:htm_lang_yidejiangli_7ree} </th><th style="text-align:center;">{lang jingcai_7ree:htm_lang_lingjiangzhuangtai_7ree} </th>
+        </tr>
+        <!--{if $loglist_7ree}-->
+        <!--{loop $loglist_7ree $loglist_value}-->
+        <tr>
+        <td>$loglist_value[log_id_7ree]</td><td><a href="plugin.php?id=jingcai_7ree:jingcai_7ree&sp_7ree=more&main_id_7ree=$loglist_value[main_id_7ree]" target="_blank">$loglist_value[racename_7ree]</a></td>
+        <td>$loglist_value[log_time_7ree]</td>
+        <td><!--{if $loglist_value[mywin_7ree]=="a"}-->$loglist_value[aname_7ree]
+        <!--{elseif $loglist_value[mywin_7ree]=="b"}-->$loglist_value[bname_7ree]
+        <!--{elseif $loglist_value[mywin_7ree]=="c"}-->{lang jingcai_7ree:htm_lang_pingju_7ree}
+        <!--{/if}--></td>
+        <td><!--{if $loglist_value[win_7ree]=="a"}-->$loglist_value[aname_7ree]
+        <!--{elseif $loglist_value[win_7ree]=="b"}-->$loglist_value[bname_7ree]
+        <!--{elseif $loglist_value[win_7ree]=="c"}-->{lang jingcai_7ree:htm_lang_pingju_7ree}
+        <!--{else}-->{lang jingcai_7ree:htm_lang_weijiexiao_7ree}<!--{/if}--></td>
+        
+        <td> {$loglist_value[plan_reward_7ree]}{$exttitle_7ree} <span class="pipe">|</span> {$loglist_value[log_reward_7ree]}{$exttitle_7ree} </td><td align="center"> 
+<!--{if $loglist_value[mywin_7ree] == $loglist_value[win_7ree]}-->
+        <span class="pn" style="padding:4px 12px 4px 12px;"><!--{if !$loglist_value[log_reward_7ree]}-->
+<a href="plugin.php?id=jingcai_7ree:jingcai_7ree&ac_7ree=1&op_7ree=get&log_id_7ree=$loglist_value[log_id_7ree]&formhash={FORMHASH}"><font color='red'>{lang jingcai_7ree:htm_lang_likelingqu}</font></a><!--{else}--><font color='green'>{lang jingcai_7ree:htm_lang_yijinglingqu_7ree}</font><!--{/if}--></span>
+<!--{else}-->
+<font color="gray">{lang jingcai_7ree:htm_lang_weicaidui_7ree}</font>
+<!--{/if}-->
+</td>
+        </tr>
+        <!--{/loop}-->
+        <tr>
+        <td colspan="7">$multipage</td>
+        </tr>
+        <!--{else}-->
+        <tr>
+        <td colspan="7">
+        <div class="notice">{lang jingcai_7ree:htm_lang_weicanyu_7ree}</div>
+        <div class="notice"><a href="plugin.php?id=jingcai_7ree:jingcai_7ree">{lang jingcai_7ree:htm_lang_canyuhuodong_7ree}</a></div></td>
+        </tr> 
+        <!--{/if}-->
+</table>

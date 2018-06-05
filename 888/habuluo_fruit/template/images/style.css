@@ -1,0 +1,236 @@
+.piece
+{
+    width:110px;
+    height:110px;
+    border:1px solid #000000;
+}
+.win_piece
+{
+    background:rgba(255, 0, 0, 0.4) none repeat scroll 0 0 !important; 
+    filter:alpha(opacity=40);
+    background-color:#dedede;
+    width:110px;
+    height:110px;
+    border:1px solid #dedede;
+}
+.bet
+{
+    width:87px;
+    height:87px;
+    border:1px solid #dedede;
+    display:block;
+    cursor:pointer;
+}
+.b_bar
+{
+    background:url(b_bar.png) no-repeat;
+}
+.s_bar
+{
+    background:url(s_bar.png) no-repeat;   
+}
+.bar
+{
+    background:url(bar.png) no-repeat;
+}
+.b_seven
+{
+    background:url(b_77.png) no-repeat;
+}
+.s_seven
+{
+    background:url(s_77.png) no-repeat;
+}
+.seven
+{
+    background:url(77.png) no-repeat;
+}
+.b_star
+{
+    background:url(b_star.png) no-repeat;
+}
+.s_star
+{
+    background:url(s_star.png) no-repeat;
+}
+.star
+{
+    background:url(star.png) no-repeat;
+}
+.b_watermelons
+{
+    background:url(b_watermelons.png) no-repeat;
+}
+.s_watermelons
+{
+    background:url(s_watermelons.png) no-repeat;
+}
+.watermelons
+{
+    background:url(watermelons.png) no-repeat;
+}
+.b_alarm
+{
+    background:url(b_alarm.png) no-repeat;
+}
+.s_alarm
+{
+    background:url(s_alarm.png) no-repeat;
+}
+.alarm
+{
+    background:url(alarm.png) no-repeat;
+}
+.b_coconut
+{
+    background:url(b_coconut.png) no-repeat;
+}
+.s_coconut
+{
+    background:url(s_coconut.png) no-repeat;
+}
+.coconut
+{
+    background:url(coconut.png) no-repeat;
+}
+.b_orange
+{
+    background:url(b_orange.png) no-repeat;
+}
+.s_orange
+{
+    background:url(s_orange.png) no-repeat;
+}
+.orange
+{
+    background:url(orange.png) no-repeat;
+}
+.b_apple
+{
+    background:url(b_apple.png) no-repeat;
+}
+.s_apple
+{
+    background:url(s_apple.png) no-repeat;
+}
+.apple
+{
+    background:url(apple.png) no-repeat;
+}
+.cha
+{
+    background:url(cha.png) no-repeat;
+}
+
+
+.lhj_bet_table td 
+{
+    padding:3px;     
+    text-align:center;
+}
+
+.lhj_input
+{
+    border-left:1px solid #999;
+    border-top:1px solid #999;
+    border-right:1px solid #eee;
+    border-bottom:1px solid #eee;
+    text-align:center;
+}
+
+.lhj_money_input
+{
+    width:178px;
+    height:40px;
+    font-size:38px;
+    margin:0;
+    padding:0;
+    line-height:40px;
+    display:block;
+}
+
+.lhj_span 
+{
+    font-size:16px;
+    width:180px;
+    display:inline-block;
+    text-align:center;
+    padding:3px;
+}
+
+.lhj_bet_table .lhj_bet_input
+{
+    width:85px;
+    height:20px;
+    margin:0;
+    padding:0;
+    line-height:20px;
+    font-size:16px;
+}
+
+.lhj_bet_btn
+{
+    display:inline-block;
+    cursor:pointer;
+    width:182px;
+    height:40px;
+    line-height:40px;
+    text-align:center;
+    background-color:#fff;
+    margin:3px;
+    color:Black;
+    font-size:24px;
+    border-left:1px solid #eee;
+    border-top:1px solid #eee;
+    border-right:1px solid #999;
+    border-bottom:1px solid #999;
+}
+#adv
+{
+    background: url(caogen8.co.png) no-repeat;
+    background-position: center center;
+}
+
+.lhj_list
+{
+    overflow:hidden;
+    padding-left: 5px;
+    padding-right:5px;    
+}
+
+.lhj_list li
+{
+    line-height:23px;
+    list-style:none outside none;
+    overflow:hidden;
+    white-space:nowrap;    
+}
+.lhj_list li dt
+{
+    float:left;
+    width:205px;
+    overflow:hidden;
+    white-space:nowrap;
+    text-align: left;
+}
+.lhj_list li dd
+{
+    float:right;
+    width:120px;
+    text-align:right;
+} 
+
+#lhj_bet
+{
+    /*width:350px;*/
+    overflow: hidden;
+}
+
+#lhj_piece_bg
+{
+    padding-left:20px;
+}
+.bg_fruit
+{
+    background-color:#fff;
+}

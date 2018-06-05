@@ -1,0 +1,37 @@
+
+<table width="100%" border="0" cellpadding="5" cellspacing="0"  class="dt mtm">
+<tr class="colplural" >
+<th colspan="6">
+<p class="y" style="padding-right:10px;">
+<span <!--{if $_GET['cycle_7ree']==1}-->style="font-weight:700;"<!--{/if}-->><a href="plugin.php?id=jingcai_7ree:jingcai_7ree&ac_7ree=6&how_7ree={$_GET['how_7ree']}">{lang jingcai_7ree:htm_lang_alltop_7ree}</a>
+</span>
+<span class="pipe">|</span>
+<span <!--{if $_GET['cycle_7ree']==2}-->style="font-weight:700;"<!--{/if}-->><a href="plugin.php?id=jingcai_7ree:jingcai_7ree&ac_7ree=6&how_7ree={$_GET['how_7ree']}&cycle_7ree=2">{lang jingcai_7ree:htm_lang_niantop_7ree}</a>
+</span>
+<span class="pipe">|</span>
+<span <!--{if $_GET['cycle_7ree']==3}-->style="font-weight:700;"<!--{/if}-->><a href="plugin.php?id=jingcai_7ree:jingcai_7ree&ac_7ree=6&how_7ree={$_GET['how_7ree']}&cycle_7ree=3">{lang jingcai_7ree:htm_lang_yuetop_7ree}</a></span>
+<span class="pipe">|</span>
+<span <!--{if $_GET['cycle_7ree']==4}-->style="font-weight:700;"<!--{/if}-->><a href="plugin.php?id=jingcai_7ree:jingcai_7ree&ac_7ree=6&how_7ree={$_GET['how_7ree']}&cycle_7ree=4">{lang jingcai_7ree:htm_lang_zhoutop_7ree}</a></span>
+</p>
+
+<h3>{lang jingcai_7ree:htm_lang_jingcai_7ree}<font color="blue"><!--{if $_GET['how_7ree']==1}-->{lang jingcai_7ree:htm_lang_rank1_7ree}<!--{elseif $_GET['how_7ree']==2}-->{lang jingcai_7ree:htm_lang_rank2_7ree}<!--{elseif $_GET['how_7ree']==3}-->{lang jingcai_7ree:htm_lang_rank3_7ree}<!--{/if}--></font>: TOP100</h3></th>
+</tr>
+<tr><td align="middle">{lang jingcai_7ree:htm_lang_ranklist_7ree}</td><td align="middle">{lang jingcai_7ree:htm_lang_huiyuan_7ree}</td><td align="middle"><!--{if $_GET['how_7ree']==2}-->{lang jingcai_7ree:htm_lang_canyu_7ree}<!--{else}-->{lang jingcai_7ree:htm_lang_caizhong_7ree}<!--{/if}-->{lang jingcai_7ree:htm_lang_changci_7ree}</td><td align="middle">
+<!--{if $_GET['how_7ree']==1}-->
+{lang jingcai_7ree:htm_lang_zongyingli_7ree}
+<!--{elseif $_GET['how_7ree']==2}-->
+{lang jingcai_7ree:htm_lang_jinglirun_7ree}
+<!--{elseif $_GET['how_7ree']==3}-->
+{lang jingcai_7ree:htm_lang_zongyingli_7ree}
+<!--{/if}-->
+</td></tr>
+<!--{if $toplist_7ree}-->
+<!--{loop $toplist_7ree $key $topvalue_7ree}-->
+<tr><td align="middle"><font color="red" size="4"><b>{eval echo $key + 1;}</b></font></td><td align="middle"><a href="home.php?mod=space&uid=$topvalue_7ree[uid_7ree]" target="_blank">$topvalue_7ree[username_7ree]</td><td align="middle"><b>{$topvalue_7ree[log_num_7ree]}</b>{lang jingcai_7ree:htm_lang_changci_7ree}</td><td align="middle"><b>{$topvalue_7ree[sum_reward_7ree]}</b>{$exttitle_7ree}</td></tr>
+<!--{/loop}-->
+<!--{else}-->
+<tr>
+<td colspan="6"><div class="notice">{lang jingcai_7ree:htm_lang_wurenshangbang_7ree}</div></td>
+</tr>
+<!--{/if}-->
+</table>

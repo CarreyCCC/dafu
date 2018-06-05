@@ -1,0 +1,97 @@
+{subtemplate common/header}
+<!--
+	ID: jingcai_7ree
+	[www.010xr.com] (C)2007-2013 010xr.com.
+	This is NOT a freeware, use is subject to license terms
+	Update: 9:10 2013/6/3
+	Agreement: http://addon.discuz.com/?@7.developer.doc/agreement_7ree_html
+	More Plugins: http://addon.discuz.com/?@7ree
+-->
+<style type="text/css"> 
+.datalist table { margin-bottom: 30px; width: 100%; border: 1px solid #E6E7E1; }
+.datalist th, .datalist td { padding: 4px 5px; border: 1px solid #E6E7E1; font-weight: 400; }
+.datalist th img { vertical-align: top; }
+.datalist table .stat_subject { border-right: none; }
+.datalist table .stat_num { padding-right: 15px; text-align: right; border-left: none; }
+ 
+.datalist .datatable { margin-bottom: 10px; }
+.datalist .datatable, .datalist .datatable th, .datalist .datatable td { border-width: 1px 0; }
+.datalist .fixtable { table-layout: fixed; }
+.colplural, .colplural th, .colplural td, th.highlight, td.highlight { background-color: {COMMONBG}; }
+
+.adminbtn_7ree{
+		display:block;
+		border:1px solid #CFCFCF;
+		width:100px;
+		height:30px;
+		line-height:30px;
+		float:left;
+		text-align:center;
+   		margin:5px 20px 5px 20px;
+		background-color:#E5EDF2;
+	
+}
+.b_7ree{
+		font-weight:700;
+		background-color:#FFFFFF;
+}
+</style> 
+
+
+<div id="pt" class="bm cl">
+<div class="z">
+<a href="./" class="nvhm">$_G[setting][bbname]</a><em>&rsaquo;</em><a href="$_G[siteurl]">$_G[setting][bbname]</a><em>&rsaquo;</em><a href="plugin.php?id=jingcai_7ree">{$navtitle}</a>
+</div> 
+</div>
+
+
+
+
+<div id="ct" class="wp cl n">
+<div class="mn">
+				<ul class="tb cl">
+            <li <!--{if $_GET['ac_7ree'] == ''}--> class="a"<!--{/if}--> ><a href="plugin.php?id=jingcai_7ree:jingcai_7ree"><span>{lang jingcai_7ree:htm_lang_jingcaidating_7ree}</span></a></li>
+            <li <!--{if $_GET['ac_7ree'] == '1'}--> class="a"<!--{/if}--> ><a href="plugin.php?id=jingcai_7ree:jingcai_7ree&ac_7ree=1"><span>{lang jingcai_7ree:htm_lang_lingqujiangli_7ree}</span></a></li> 
+            <li <!--{if $_GET['ac_7ree'] == '5'}--> class="a"<!--{/if}--> ><a href="plugin.php?id=jingcai_7ree:jingcai_7ree&ac_7ree=5"><span>{lang jingcai_7ree:htm_lang_zuixinjingcai_7ree}</span></a></li> 
+            <!--{if $jingcai_7ree_var[allrank_7ree]}-->
+            <li <!--{if $_GET['ac_7ree'] == '6' && $_GET['how_7ree']==1}--> class="a"<!--{/if}--> ><a href="plugin.php?id=jingcai_7ree:jingcai_7ree&ac_7ree=6&how_7ree=1"><span>{lang jingcai_7ree:htm_lang_rank1_7ree}</span></a></li> 
+            <!--{/if}-->
+            <!--{if $jingcai_7ree_var[cutrank_7ree]}-->
+            <li <!--{if $_GET['ac_7ree'] == '6' && $_GET['how_7ree']==2}--> class="a"<!--{/if}--> ><a href="plugin.php?id=jingcai_7ree:jingcai_7ree&ac_7ree=6&how_7ree=2"><span>{lang jingcai_7ree:htm_lang_rank2_7ree}</span></a></li> 
+            <!--{/if}-->
+            <!--{if $jingcai_7ree_var[winrank_7ree]}-->
+            <li <!--{if $_GET['ac_7ree'] == '6' && $_GET['how_7ree']==3}--> class="a"<!--{/if}--> ><a href="plugin.php?id=jingcai_7ree:jingcai_7ree&ac_7ree=6&how_7ree=3"><span>{lang jingcai_7ree:htm_lang_rank3_7ree}</span></a></li> 
+            <!--{/if}-->
+                        
+            <!--{if $_G[adminid]==1 || $isadmins_7ree}-->         
+            <li <!--{if $_GET['ac_7ree'] == '2'}--> class="a"<!--{/if}--> ><a href="plugin.php?id=jingcai_7ree:jingcai_7ree&ac_7ree=2"><span>{lang jingcai_7ree:htm_lang_admincp_7ree}</span></a></li>
+
+            <!--{/if}-->
+				</ul>
+			<div class="datalist">
+			<!--{if $_GET['ac_7ree'] == ""}-->
+			{template jingcai_7ree:jingcai_main_7ree}
+			<!--{elseif $_GET['ac_7ree'] == "1"}-->
+			{template jingcai_7ree:jingcai_reward_7ree}
+			<!--{elseif $_GET['ac_7ree'] == "2"}-->
+			{template jingcai_7ree:jingcai_admin_7ree}
+			<!--{elseif $_GET['ac_7ree'] == "5"}-->
+			{template jingcai_7ree:jingcai_rank_7ree}
+			<!--{elseif $_GET['ac_7ree'] == "6"}-->
+			{template jingcai_7ree:jingcai_top_7ree}
+			<!--{/if}-->
+	    	</div>
+				
+
+    </div>
+</div>	
+
+
+
+
+
+	
+
+
+
+{subtemplate common/footer}

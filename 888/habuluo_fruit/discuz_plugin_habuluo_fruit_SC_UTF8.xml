@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+	<item id="Title"><![CDATA[Discuz! Plugin]]></item>
+	<item id="Version"><![CDATA[X2.5]]></item>
+	<item id="Time"><![CDATA[2016-07-31 14:41]]></item>
+	<item id="From"><![CDATA[CAOGEN8 (http://www.cgzz8.com/)]]></item>
+	<item id="Data">
+		<item id="plugin">
+			<item id="available"><![CDATA[1]]></item>
+			<item id="adminid"><![CDATA[1]]></item>
+			<item id="name"><![CDATA[水果乐园]]></item>
+			<item id="identifier"><![CDATA[habuluo_fruit]]></item>
+			<item id="description"><![CDATA[水果乐园
+哈部落体育网
+网址：http://www.caogen8.co]]></item>
+			<item id="datatables"><![CDATA[]]></item>
+			<item id="directory"><![CDATA[habuluo_fruit/]]></item>
+			<item id="copyright"><![CDATA[草根吧http://www.caogen8.co]]></item>
+			<item id="version"><![CDATA[6.4]]></item>
+			<item id="__modules">
+				<item id="0">
+					<item id="name"><![CDATA[habuluo_fruit]]></item>
+					<item id="menu"><![CDATA[水果乐园]]></item>
+					<item id="url"><![CDATA[plugin.php?id=habuluo_fruit]]></item>
+					<item id="type"><![CDATA[1]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="1">
+					<item id="name"><![CDATA[admincp]]></item>
+					<item id="menu"><![CDATA[订单查询]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[0]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+				<item id="2">
+					<item id="name"><![CDATA[admin_report]]></item>
+					<item id="menu"><![CDATA[统计报表]]></item>
+					<item id="url"><![CDATA[]]></item>
+					<item id="type"><![CDATA[3]]></item>
+					<item id="adminid"><![CDATA[0]]></item>
+					<item id="displayorder"><![CDATA[1]]></item>
+					<item id="navtitle"><![CDATA[]]></item>
+					<item id="navicon"><![CDATA[]]></item>
+					<item id="navsubname"><![CDATA[]]></item>
+					<item id="navsuburl"><![CDATA[]]></item>
+				</item>
+			</item>
+		</item>
+		<item id="version"><![CDATA[X1.5,X2,X2.5,X3,X3.1,X3.2,F1.0]]></item>
+		<item id="var">
+			<item id="0">
+				<item id="displayorder"><![CDATA[0]]></item>
+				<item id="title"><![CDATA[使用积分]]></item>
+				<item id="description"><![CDATA[站长交流QQ群：306115775]]></item>
+				<item id="variable"><![CDATA[use_cash]]></item>
+				<item id="type"><![CDATA[extcredit]]></item>
+				<item id="value"><![CDATA[2]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="1">
+				<item id="displayorder"><![CDATA[1]]></item>
+				<item id="title"><![CDATA[最大投注金额]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[max_bet]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[9999]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="2">
+				<item id="displayorder"><![CDATA[2]]></item>
+				<item id="title"><![CDATA[作弊设置]]></item>
+				<item id="description"><![CDATA[0-100，0为不中出大奖，100为不作弊。]]></item>
+				<item id="variable"><![CDATA[del_rate]]></item>
+				<item id="type"><![CDATA[number]]></item>
+				<item id="value"><![CDATA[78]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="3">
+				<item id="displayorder"><![CDATA[4]]></item>
+				<item id="title"><![CDATA[音乐开关]]></item>
+				<item id="description"><![CDATA[]]></item>
+				<item id="variable"><![CDATA[mu_yn]]></item>
+				<item id="type"><![CDATA[radio]]></item>
+				<item id="value"><![CDATA[0]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="4">
+				<item id="displayorder"><![CDATA[5]]></item>
+				<item id="title"><![CDATA[广告设置]]></item>
+				<item id="description"><![CDATA[(注意：在IE6下，使用一些广告管家代码报错，如果没必要，此广告留空)
+目前只支持广告代码，如百度广告管家代码，留空则不显示广告。]]></item>
+				<item id="variable"><![CDATA[ad_code]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+			<item id="5">
+				<item id="displayorder"><![CDATA[6]]></item>
+				<item id="title"><![CDATA[说明链接]]></item>
+				<item id="description"><![CDATA[支持HTML，格式为：<a target="_blank" title="水果乐园 Author: CAOGEN8" href="http://www.caogen8.co/misc.php?mod=faq&amp;action=faq&amp;id=18">
+HaBuLuo 水果乐园 For X2.5! 哈部落体育网构建最好的体育开放平台【水果乐园规则说明】</a>]]></item>
+				<item id="variable"><![CDATA[rule_link]]></item>
+				<item id="type"><![CDATA[textarea]]></item>
+				<item id="value"><![CDATA[<a target="_blank" title="水果乐园 Author: CAOGEN8" href="http://www.caogen8.co/misc.php?mod=faq&amp;action=faq&amp;id=18">
+HaBuLuo 水果乐园 For X2.5! 哈部落体育网构建最好的体育开放平台【水果乐园规则说明】</a>]]></item>
+				<item id="extra"><![CDATA[]]></item>
+			</item>
+		</item>
+		<item id="language">
+			<item id="scriptlang">
+				<item id="english"><![CDATA[chinese]]></item>
+				<item id="sp_username"><![CDATA[用户名]]></item>
+				<item id="sp_search"><![CDATA[搜索]]></item>
+				<item id="sp_orders"><![CDATA[投注内容]]></item>
+				<item id="sp_order_money"><![CDATA[投注金额]]></item>
+				<item id="sp_win_money"><![CDATA[赢利]]></item>
+				<item id="sp_time"><![CDATA[投注时间]]></item>
+				<item id="sp_orders_disp"><![CDATA[投注内容分别对应：BAR,77,双星,西瓜,铃铛,木瓜,橙子,苹果]]></item>
+				<item id="sp_beg_end"><![CDATA[时间范围]]></item>
+				<item id="sp_max_username"><![CDATA[赢利最多20用户]]></item>
+				<item id="sp_num_orders"><![CDATA[注单数]]></item>
+				<item id="sp_orders_money"><![CDATA[投注总金额]]></item>
+				<item id="sp_wins_money"><![CDATA[投注总赢利]]></item>
+				<item id="sp_user_wins"><![CDATA[用户总赢利]]></item>
+				<item id="sp_web_win"><![CDATA[网站总赢利]]></item>
+				<item id="name"><![CDATA[水果乐园]]></item>
+			</item>
+			<item id="templatelang">
+				<item id="english"><![CDATA[chinese]]></item>
+				<item id="name"><![CDATA[水果乐园]]></item>
+				<item id="disp"><![CDATA[哈部落体育【水果乐园规则说明】]]></item>
+				<item id="nohave"><![CDATA[不存在]]></item>
+				<item id="getmoney"><![CDATA[得分]]></item>
+				<item id="money"><![CDATA[积分]]></item>
+				<item id="gamedisp"><![CDATA[由于浏览器问题，造成客户端与服务端结果不同，一切以服务端为准，最终解释权归本站所有！谢谢理解合作。]]></item>
+				<item id="btnreset"><![CDATA[重置]]></item>
+				<item id="btnstart"><![CDATA[开始]]></item>
+				<item id="notorder"><![CDATA[尚未下注，请先下注！]]></item>
+				<item id="nomoney"><![CDATA[您的积分不够下注！]]></item>
+				<item id="errors"><![CDATA[发生错误！]]></item>
+				<item id="login"><![CDATA[您未登录，请先登录]]></item>
+				<item id="gx"><![CDATA[恭喜会员]]></item>
+				<item id="zd"><![CDATA[劲中]]></item>
+				<item id="yuan"><![CDATA[元]]></item>
+				<item id="error_order"><![CDATA[未登录、投注金额错误或投注金大于最高限额：]]></item>
+			</item>
+			<item id="installlang">
+				<item id="english"><![CDATA[chinese]]></item>
+				<item id="delete_data_confirm"><![CDATA[是否要删除投注记录]]></item>
+				<item id="delete_data_confirm_content"><![CDATA[选择后，将会删除投注记录，且无法恢复！]]></item>
+			</item>
+		</item>
+		<item id="installfile"><![CDATA[install.php]]></item>
+		<item id="uninstallfile"><![CDATA[uninstall.php]]></item>
+		<item id="upgradefile"><![CDATA[upgrade.php]]></item>
+	</item>
+</root>

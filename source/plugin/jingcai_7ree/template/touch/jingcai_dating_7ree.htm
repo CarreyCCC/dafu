@@ -1,0 +1,56 @@
+		<!--{if !$_GET['finish_7ree']}-->
+		<tr class="colplural" >
+		<th colspan="6"><h3>{lang jingcai_7ree:htm_lang_gonggao_7ree}</h3></th>
+		</tr>
+		<tr>
+		<td colspan="6">
+		<p>{$notice_7ree}</p>
+		</td>
+		</tr>
+		<!--{/if}-->
+
+        <tr ><th colspan="6">
+        <p class="y" style="padding-right:10px;">
+	        <!--{loop $fenlei_array2 $key_7ree $value_7ree}-->
+	        <span><a href="plugin.php?id=jingcai_7ree:jingcai_7ree&finish_7ree={$_GET['finish_7ree']}&fenlei1_7ree=<!--{eval echo urlencode($value_7ree[0]);}-->#{saishi_7ree}"  <!--{if $_GET['fenlei1_7ree']==$value_7ree[0]}-->style="color:#0954A6;"<!--{/if}-->>{$value_7ree[0]}</a></span> <span class="pipe">|</span>
+	        <!--{/loop}--> 
+	        <span><a href="plugin.php?id=jingcai_7ree:jingcai_7ree&finish_7ree={$_GET['finish_7ree']}#{saishi_7ree}" <!--{if !$_GET['fenlei1_7ree'] && !$_GET['fenlei2_7ree']}-->style="color:#0954A6;"<!--{/if}-->>{lang jingcai_7ree:htm_lang_quanbusaishi_7ree}</a></span>
+        </p> 
+        <h3 id="saishi_7ree">{$navtitle}</h3>
+        </th></tr>
+        
+     
+        
+        <!--{if $racelist_7ree}-->
+        <!--{loop $racelist_7ree $racelist_value}-->
+
+        <tr class="mracelist_7ree">
+        <td colspan="3">
+        {$racelist_value['aname_7ree']} 
+        <span style="color:red;"><!--{if $racelist_value['win_7ree']}-->{$racelist_value['ashot_7ree']}:{$racelist_value['bshot_7ree']}<!--{else}-->VS<!--{/if}--></span> 
+        {$racelist_value['bname_7ree']}
+        <!--{if $jingcai_7ree_var['gaoshou_onoff_7ree']}-->
+         <a href="{$gaoshou_url_7ree}{$racelist_value['main_id_7ree']}" title="{lang jingcai_7ree:htm_lang_gaoshou_7ree}"><img src="./source/plugin/jingcai_7ree/template/image/gs_7ree.gif"></a>
+         <!--{/if}-->
+        </td>
+        </tr>  
+        <tr class="mracelist2_7ree">
+        <td align="center">{$racelist_value['racename_7ree']}</td>
+        <td align="center">{$racelist_value['time_7ree']}</td>
+        <td align="center">
+        <a href="{$xiangqing_url_7ree}{$racelist_value['main_id_7ree']}">
+        <!--{if $racelist_value['open_7ree']}-->
+        <span class='canjia_btn_7ree'>{lang jingcai_7ree:htm_lang_jinrujingcai_7ree}</span>
+        <!--{else}-->
+        <span  class='chakan_btn_7ree'>{lang jingcai_7ree:htm_lang_chakanxiangqing_7ree}</span>
+        <!--{/if}-->
+        </a>
+        </td>
+        </tr>
+        <!--{/loop}-->
+        <!--{else}-->
+        <tr ><td colspan="6"><div class="notice">{lang jingcai_7ree:htm_lang_zhanwujingcai_7ree}</div></td></tr>
+        <!--{/if}-->
+        <tr>
+        <td colspan="6">$multipage</td>
+        </tr>
