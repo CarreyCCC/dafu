@@ -12,10 +12,18 @@
 	<th><h3>{lang jingcai_7ree:htm_lang_wodelianjie_7ree}</h3></th>
 	</tr>
 	<td>
-	<input type="text" id="tuiguangurl_7ree" value="{$_G['setting']['siteurl']}member.php?mod=register&fromuid={$_G['uid']}" class="" style="font-size:16px;width:600px;" onclick="setCopy($('tuiguangurl_7ree').value);">
+	<input type="text" id="tuiguangurl_7ree" value="{$_G['siteurl']}member.php?mod=register&fromuid={$_G['uid']}" class="" style="font-size:16px;width:600px;" onclick="setCopy($('tuiguangurl_7ree').value);">
 	<button style="font-size:16px;width:100px;" onclick="setCopy($('tuiguangurl_7ree').value);">{lang jingcai_7ree:htm_lang_fuzhilianjie_7ree}</button>
 	</td>
 	</tr>
+	<tr class="colplural" >
+	<th><h3>{lang jingcai_7ree:htm_lang_wodeerweima_7ree}</h3></th>
+	</tr>
+	<td>
+	<img src="http://qr.liantu.com/api.php?text={$_G['siteurl']}member.php?mod=register%26fromuid={$_G['uid']}" class="woderqrimg_7ree"><br>
+	<button onclick='SaveAs5("http://qr.liantu.com/api.php?text={$_G[siteurl]}member.php?mod=register%26fromuid={$_G[uid]}")'>{lang jingcai_7ree:htm_lang_dianjixiazai_7ree}</button>
+	</td>
+	</tr>	
 </table>
 <table width="100%" border="0" cellpadding="5" cellpadding="0" class="dt mtm">
 	<tr class="colplural" >
@@ -44,3 +52,17 @@
 	<!--{/if}-->
 	</tr>
 </table>
+
+
+<script> 
+function SaveAs5(imgURL) 
+{ 
+var oPop = window.open(imgURL,"","width=1, height=1, top=5000, left=5000"); 
+for(; oPop.document.readyState != "complete"; ) 
+{ 
+if (oPop.document.readyState == "complete")break; 
+} 
+oPop.document.execCommand("SaveAs"); 
+oPop.close(); 
+} 
+</script> 

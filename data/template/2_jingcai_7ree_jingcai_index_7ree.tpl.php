@@ -1,8 +1,8 @@
 <?php if(!defined('IN_DISCUZ')) exit('Access Denied'); hookscriptoutput('jingcai_index_7ree');
 0
-|| checktplrefresh('./source/plugin/jingcai_7ree/template/jingcai_index_7ree.htm', './template/yunzhan_zq/common/header.htm', 1528097763, 'jingcai_7ree', './data/template/2_jingcai_7ree_jingcai_index_7ree.tpl.php', './source/plugin/jingcai_7ree/template', 'jingcai_index_7ree')
-|| checktplrefresh('./source/plugin/jingcai_7ree/template/jingcai_index_7ree.htm', './template/yunzhan_zq/common/footer.htm', 1528097763, 'jingcai_7ree', './data/template/2_jingcai_7ree_jingcai_index_7ree.tpl.php', './source/plugin/jingcai_7ree/template', 'jingcai_index_7ree')
-|| checktplrefresh('./source/plugin/jingcai_7ree/template/jingcai_index_7ree.htm', './template/yunzhan_zq/common/header_common.htm', 1528097763, 'jingcai_7ree', './data/template/2_jingcai_7ree_jingcai_index_7ree.tpl.php', './source/plugin/jingcai_7ree/template', 'jingcai_index_7ree')
+|| checktplrefresh('./source/plugin/jingcai_7ree/template/jingcai_index_7ree.htm', './template/yunzhan_zq/common/header.htm', 1528259111, 'jingcai_7ree', './data/template/2_jingcai_7ree_jingcai_index_7ree.tpl.php', './source/plugin/jingcai_7ree/template', 'jingcai_index_7ree')
+|| checktplrefresh('./source/plugin/jingcai_7ree/template/jingcai_index_7ree.htm', './template/yunzhan_zq/common/footer.htm', 1528259111, 'jingcai_7ree', './data/template/2_jingcai_7ree_jingcai_index_7ree.tpl.php', './source/plugin/jingcai_7ree/template', 'jingcai_index_7ree')
+|| checktplrefresh('./source/plugin/jingcai_7ree/template/jingcai_index_7ree.htm', './template/yunzhan_zq/common/header_common.htm', 1528259111, 'jingcai_7ree', './data/template/2_jingcai_7ree_jingcai_index_7ree.tpl.php', './source/plugin/jingcai_7ree/template', 'jingcai_index_7ree')
 ;?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -225,9 +225,9 @@ EOF;
 <div id="wp" class="wp">
 <!--
 ID: jingcai_7ree
-[www.7ree.com] (C)2007-2017 7ree.com.
+[www.7ree.com] (C)2007-2018 7ree.com.
 This is NOT a freeware, use is subject to license terms
-Update: 2017/10/28 17:19
+Update: 2018/6/4 16:23
 Agreement: http://addon.discuz.com/?@7.developer.doc/agreement_7ree_html
 More Plugins: http://addon.discuz.com/?@7ree
 -->

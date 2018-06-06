@@ -112,11 +112,15 @@
         {lang jingcai_7ree:htm_lang_rang_7ree}{$race_7ree['rangqiuway_7ree']}</strong>
         </p>
         <!--{/if}-->
-        </td></tr>
-        
+        </td>
+        </tr>
+
+        {template jingcai_7ree:jingcai_pagebody_7ree}
+
 
         <!--{if $mywin_7ree}-->
-        <tr><td colspan="5" align="middle">
+        <tr>
+        <td colspan="5" align="middle">
         <p style="padding:5px;">
         <!--{if $mywin_7ree['mywin_7ree'] == "a"}-->{lang jingcai_7ree:htm_lang_woyijingcai_7ree}<strong class="rangqiuspan_7ree">{$race_7ree['aname_7ree']}{lang jingcai_7ree:htm_lang_huosheng_7ree}</strong>
         <!--{elseif $mywin_7ree['mywin_7ree'] == "b"}-->{lang jingcai_7ree:htm_lang_woyijingcai_7ree}<strong class="rangqiuspan_7ree">{$race_7ree['bname_7ree']}{lang jingcai_7ree:htm_lang_huosheng_7ree}</strong>
@@ -124,10 +128,11 @@
         <!--{elseif $mywin_7ree['mywin_7ree'] == "d"}-->{lang jingcai_7ree:htm_lang_yifanhuan_7ree}{$mywin_7ree['myodds_7ree']}{$exttitle_7ree}
         <!--{/if}--></strong>
         <!--{if $mywin_7ree['mywin_7ree'] <> "d"}--><span class="pipe">|</span>{lang jingcai_7ree:htm_lang_bingzhichi_7ree}<strong class="rangqiuspan_7ree">{$mywin_7ree['myodds_7ree']}{$exttitle_7ree}</strong><!--{/if}-->
-        </p></td></tr>
+        <span class="pipe">|</span><a href="plugin.php?id=jingcai_7ree:jingcai_7ree&ac_7ree=1" target="_blank">{lang jingcai_7ree:htm_lang_wodegengduo_7ree}</a>
+        </p>
+        </td>
+        </tr>
         <!--{/if}-->
-       
-        {template jingcai_7ree:jingcai_pagebody_7ree}
 
         <!--{if $notice_7ree}-->
         <td colspan="6">

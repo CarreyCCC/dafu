@@ -9,6 +9,11 @@
 .datalist .fixtable { table-layout: fixed; }
 .colplural, .colplural th, .colplural td, th.highlight, td.highlight { background-color: {COMMONBG}; }
 
+.datalist img{
+	margin-top:10px;
+	border-radius:9px;
+}
+
 .datingcell_7ree{
 		background-color:#FFFFFF;
 }
@@ -228,11 +233,12 @@
 }
 
 .myodds_7ree{
-		font-size:14px;
-		width:50px;
+		font-size:18px;
+		width:80px;
 		height:16px;
 		line-height:16px;
 		color:red;
+		font-weight: 700;
 		text-align:center;
 }
 
@@ -255,13 +261,15 @@
 
 .chatbox_7ree{
 	float: none;
-    height: 190px;
-    border: 1px solid #c2d5e3;
-    margin-top: 10px;
-    box-shadow: 0 0 1px 1px #f5f5f5;
-    position: relative;
-    overflow: hidden;
-    overflow-y: auto;
+	height: 190px;
+/*
+	border: 1px solid #c2d5e3;
+*/
+	margin-top: 10px;
+	box-shadow: 0 0 1px 1px #f5f5f5;
+	position: relative;
+	overflow: hidden;
+	overflow-y: auto;
 }
 
 .chatbox_7ree li{
@@ -322,4 +330,24 @@
 	text-align:center;
 	padding:5px 10px;
 	border-radius:3px;
+}
+
+.jingcaibtn_7ree{
+	display:inline-block;
+	width:120px;
+	height:30px;
+	margin:0 15px;
+	background-color:#BD8C49;
+	color:#FFFFFF;
+	text-align:center;
+	padding:5px 10px;
+	border:none;
+	border-radius:3px;
+	cursor:pointer;
+	overflow:hidden;
+}
+
+.woderqrimg_7ree{
+	height:160px;
+	width:160px;
 }
