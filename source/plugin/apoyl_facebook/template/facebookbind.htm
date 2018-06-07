@@ -1,0 +1,31 @@
+<!--{if $row['user_id'] }-->
+<p class="pbm bbda xi1">{lang apoyl_facebook:facebook_bind_info}</p>
+
+<h2><a href="javascript:;" onclick="display('unbind');" class="xi2">{lang apoyl_facebook:facebook_unbind}</a></h2>
+
+<div id="unbind" style="display:none;">
+<form action="{$destoryurl}" method="post" autocomplete="off">
+<input type="hidden" name="formhash" value="{FORMHASH}">
+<p class="mtm mbm">
+	{lang apoyl_facebook:facebook_unbind}
+</p>
+<div>
+	<button type="submit"  value="yes" class="pn pnc"><strong>{lang apoyl_facebook:facebook_bind_confirm}</strong></button>
+</div>
+</form>
+</div>
+<!--{else}--><div class="mtw bm2 cl">
+	<div class="bm2_b bw0 hm" style="padding-top: 70px;">
+		<a href="$purl"><img src="source/plugin/apoyl_facebook/image/login_bind_big.png" /></a>
+		<p class="mtn xg1">{lang apoyl_facebook:facebook_bind}</p>
+	</div>
+	<div class="bm2_b bm2_b_y bw0">
+		<dl class="xld">
+			<h2 class="xi1 xs2" style="color:#1F98C7">{lang apoyl_facebook:facebook_bind_title}</h2>
+			<dt>{lang apoyl_facebook:facebook_bind_title_one}</dt>
+			<dd class="xg1">{lang apoyl_facebook:facebook_bind_title_one_msg}</dd>
+			
+		</dl>
+	</div>
+</div>
+<!--{/if}-->

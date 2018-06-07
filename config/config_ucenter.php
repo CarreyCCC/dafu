@@ -13,8 +13,7 @@ define('UC_DBCONNECT', 0);
 
 define('UC_CHARSET', 'utf-8');
 define('UC_KEY', 'M1l3oeL7e8K824jbQ8nf3bW9Oaud7creibJ5LfCfa2Q03dM4xe143aD5Lf02MdDf');
-define('UC_API', 'http://54.193.63.29/uc_server');
+define('UC_API', 'https://www.aihx888.com/uc_server');
 define('UC_APPID', '1');
 define('UC_IP', '');
 define('UC_PPP', 20);
-?>
