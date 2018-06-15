@@ -1,4 +1,4 @@
-.datalist table { margin-bottom: 15px; width: 100%; border: 1px solid #E6E7E1; }
+.datalist table { margin-bottom: 15px; width: 100%; border: 1px solid #E6E7E1; background-image: url(bg-001.png); }
 .datalist th, .datalist td { padding: 4px 5px; border: 1px solid #E6E7E1; font-weight: 400; }
 .datalist th img { vertical-align: top; }
 .datalist table .stat_subject { border-right: none; }
@@ -8,7 +8,7 @@
 .datalist .datatable, .datalist .datatable th, .datalist .datatable td { border-width: 1px 0; }
 .datalist .fixtable { table-layout: fixed; }
 .colplural, .colplural th, .colplural td, th.highlight, td.highlight { background-color: {COMMONBG}; }
-
+tr.colplural {background-image:url(005a.png);}
 .colplural td{
 	text-align:center;
 }
@@ -182,6 +182,8 @@
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	overflow: hidden;
+	background-image: url(bottom_bg.jpg);
+    background-position: center;
 }
 
 .footnav_7ree ul{
@@ -208,7 +210,7 @@
     padding-top: 24px;
     line-height: 24px;
     display: block;
-    color: #666;
+    color: #fff;
     background: url(icon_bg.png) no-repeat 50% 1px;
     background-size: 20px auto !important;
 }
@@ -266,19 +268,21 @@
 		font-size: 19px;
 		font-weight:700;
 		text-align: center;
-		padding: 8px 10px 8px 0;
-		background-color:#FFFFFF;
+		padding: 8px 10px 8px 0;		
 		border-bottom:1px solid #CFCFCF;
 		z-index:9999;
 		position:fixed;
 		top:0px;
 		left:0px;
+		background-image: url(bottom_bg.jpg);
+		background-position: center;
+		color:#fff;
 }
 
 .topposi_7ree{
 		height: 50px;
 }
-
+span.name {color:$ffffff;}
 .chatbox_7ree{
 	float: none;
     height: 190px;
@@ -321,7 +325,7 @@
 }
 
 .mracelist_7ree td{
-	background-color:#FFFFFF;
+	/*background-color:#FFFFFF; */
 	font-size:16px;
 	font-weight:700;
 	text-align:center;
@@ -336,7 +340,7 @@
 }
 
 .mracelist2_7ree td{
-	background-color:#FFFFFF;
+	background-color:rgb(250, 250, 250, 65%);
 	border-bottom:3px solid #f5f5f5;
 	border:none !important;
 	height:20px;
@@ -353,7 +357,8 @@
 	padding:3px 4px 3px 4px; 
 	border:1px solid #E5EDF2; 
 	color:white;
-	background:green;
+	background-image: url(009a.png);
+	border-radius: 10px;
 }
 
 .chakan_btn_7ree{
@@ -365,7 +370,7 @@
 	background:gray;
 }
 
-.zhichicard_7ree{
+.zhichicard_7ree{ 
 	background: #fff;
 	text-align: center;
 	width:100%;
