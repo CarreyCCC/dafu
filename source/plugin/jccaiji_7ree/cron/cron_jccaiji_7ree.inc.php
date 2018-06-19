@@ -1,9 +1,9 @@
 <?php
 /*
 	ID: jccaiji_7ree
-	[www.7ree.com] (C)2007-2016 7ree.com.
+	[www.7ree.com] (C)2007-2018 7ree.com.
 	This is NOT a freeware, use is subject to license terms
-	Update: 2018/5/21 15:22
+	Update: 2018/6/7 16:33
 	Agreement: http://addon.discuz.com/?@7.developer.doc/agreement_7ree_html
 	More Plugins: http://addon.discuz.com/?@7ree
 */
@@ -49,19 +49,23 @@ if($vars_7ree['function_7ree']==1){//curl_setopt º¯Êý
 }
 
 
-$currentlang=currentlang();
-if($currentlang=="SC_UTF8"){
-	$info1_7ree = iconv("gb2312", "utf-8//IGNORE",$info1_7ree);
-	$lang_7ree = 'utf-8';
-}else{
-	$lang_7ree = 'gbk';
-}
 
 $pos_7ree = strpos($info1_7ree,'<div class="bet_th" id="bet_th"');
 $info1_7ree = substr($info1_7ree,$pos_7ree);
 
 $pos2_7ree = strpos($info1_7ree,'<div class="buy_bar_area l_buy_area"');
 $info1_7ree = substr($info1_7ree,0,$pos2_7ree);
+
+
+$currentlang=currentlang();
+if($currentlang=="SC_UTF8" || $currentlang=="TC_UTF8"){
+	$info1_7ree = iconv("gb2312", "utf-8//IGNORE",$info1_7ree);
+	$lang_7ree = 'utf-8';
+}else{
+	$lang_7ree = 'gbk';
+}
+
+
 
 $result_7ree = get_td_array($info1_7ree);
 

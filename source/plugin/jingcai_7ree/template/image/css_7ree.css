@@ -1,5 +1,7 @@
-.datalist table { margin-bottom: 20px; width: 100%; border: 1px solid #E6E7E1; }
-.datalist th, .datalist td { padding: 4px 5px; border: 1px solid #E6E7E1; font-weight: 400; }
+.datalist {font-size:10pt;background: url(bg-001.jpg) top center no-repeat;    background-size: cover;}
+.datalist h3 {font-size:12pt;}
+.datalist table { margin-bottom: 20px; width: 100%; border: 0px solid #E6E7E1; }
+.datalist th, .datalist td { padding: 10px 15px; border: 0px solid #E6E7E1; font-weight: 400; }
 .datalist th img { vertical-align: top; }
 .datalist table .stat_subject { border-right: none; }
 .datalist table .stat_num { padding-right: 15px; text-align: right; border-left: none; }
@@ -10,12 +12,12 @@
 .colplural, .colplural th, .colplural td, th.highlight, td.highlight { background-color: {COMMONBG}; }
 
 .datalist img{
-	margin-top:10px;
+	margin-top:0px;
 	border-radius:9px;
 }
 
 .datingcell_7ree{
-		background-color:#FFFFFF;
+		background-color:#FFFFFF; opacity: 0.7;
 }
 
 .adminbtn_7ree{
@@ -67,13 +69,19 @@
 
 .topline_7ree{
 		border-bottom:1px #E6E7E1 solid;
-		height:30px;
-		line-height:30px;
+		height:50px;
+		line-height:50px;
+		display:flex;
+		align-items:center;
+		justify-content:center;
 }
 
 .bottomline_7ree{
-		height:30px;
-		line-height:30px;
+		height:50px;
+		line-height:50px;
+		display:flex;
+		align-items:center;
+		justify-content:center;
 }
 
 .brline_7ree{
@@ -88,19 +96,19 @@
 		border-left:1px #DEDEDE solid;
 		border-right:1px #BDBDBD solid;
 		border-bottom:1px #BDBDBD solid;
-		padding-bottom:2px;
 		height:18px;
 		line-height:18px;
 		width:50px;
-		margin-top:5px;
 		font-weight:700;
 		text-align:center;
 }
 
 .remarkspan_7ree{
-		margin-left:10px;
+		margin:25px;
 		font-size:12px;
 		color:#FF6600;
+		width:50px;
+		
 }
 
 .bifenspan_7ree{
@@ -189,12 +197,16 @@
 		color:#B12236 !important;
 		font-weight:700;
 		background-color:#FDF9DF;
-		padding:3px 7px; 
+		padding:0px 0px; 
 		border-top: 1px #DEDEDE solid; 
 		border-left: 1px #DEDEDE solid; 
 		border-right: 1px #BDBDBD solid; 
 		border-bottom: 1px #BDBDBD solid;
 		margin-right:10px;
+		display:block;
+	    background-image: url(009a.png);
+        border-radius: 8px;
+}
 }
 
 .wjr_table_7ree td{
@@ -257,6 +269,8 @@
 	line-height:14px;
 	width:55px;
 	text-align:center;
+	margin-right: 30px;
+	
 }
 
 .chatbox_7ree{
@@ -351,3 +365,11 @@
 	height:160px;
 	width:160px;
 }
+
+/* 新增 */
+#pt {display:none;}
+/*.tb.cl {display: none;}*/
+/*.topline_7ree a:link {    vertical-align: text-top;}*/
+.pn {height:30px; line-height:30px;padding: 0 10px;}
+a.pn {height:30px; line-height:30px;}
+.banner123 {margin:15px 0;height:368px;}

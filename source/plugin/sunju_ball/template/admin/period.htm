@@ -1,0 +1,132 @@
+<div id="modules">
+	<script type="text/javascript" src="static/js/calendar.js"></script>
+	<hr style="border-top: 1px dashed #8ADAF4">
+	<form name="modulesform" method="post" autocomplete="off" action="{$PL_ADMIN_URL}add">
+		<input type="hidden" name="formhash" value="{FORMHASH}" />
+		<table class="tb" style="width: 100%">
+			<tbody>
+				<tr>
+					<th colspan="4" class="partition">{lang sunju_ball:ad_nav_add_tit}</th>
+				</tr>
+				<tr class="header">
+					<th></th>
+					<th>{lang sunju_ball:ad_nav_add_tit_1}</th>
+					<th>{lang sunju_ball:ad_nav_add_tit_2}</th>
+					<th>{lang sunju_ball:ad_nav_add_tit_3}</th>			
+				</tr>
+				<tr class="hover">
+					<td></td>
+					<td>
+						<input type="text" class="txt" size="15" id="" name="period" value="{$now_period}">
+					</td>
+					<td>
+						<input type="text" class="txt" size="25" name="s_time" value="" onclick="showcalendar(event, this, 1)">
+					</td>
+					<td>
+						<input type="text" class="txt" size="25" name="e_time" value="" onclick="showcalendar(event, this, 1)">
+					</td>
+				</tr>
+			</tbody>
+			<tbody>
+				<tr>
+					<td class="td25"></td>
+					<td colspan="15">
+						<div class="fixsel">
+							<input type="submit" class="btn" id="submit_editsubmit" title="{lang sunju_ball:add}" value="{lang sunju_ball:add}">
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
+	<table class="tb" style="width: 90%">
+		<tbody>
+			<tr>
+				<th colspan="4" class="partition">{lang sunju_ball:ad_nav_list_tit}</th>
+			</tr>
+			<tr class="header">
+				<th></th>
+				<th>{lang sunju_ball:ad_nav_add_tit_1}</th>
+				<th>{lang sunju_ball:ad_nav_add_tit_2}</th>
+				<th>{lang sunju_ball:ad_nav_add_tit_3}</th>
+				<th>{lang sunju_ball:ad_nav_list_tit_1}</th>
+				<th>{lang sunju_ball:status}</th>
+				<th>{lang sunju_ball:op}</th>
+			</tr>
+			<!--{loop $list $v}-->
+				<tr class="hover">
+					<td></td>
+					<td><span>{$v['period']}</span></td>
+					<td><span>{$v['s_time']}</span></td>
+					<td><span>{$v['e_time']}</span></td>
+					<td>
+						<input {if $v['status'] == 3}disabled="disabled" readonly="readonly"{/if} type="text" class="txt SUN_key" size="35" name="win_num" rel="{$v['id']}" value="{$v['win_num_r']}#{$v['win_num_b']}">
+					</td>
+					<td><span>{$PL_P_S[$v['status']]}</span></td>
+					<td>
+						{if $v['status'] == 2}
+						<input type="button" class="btn SUN_go" rel="{$v['id']}" title="{lang sunju_ball:reward}" value="{lang sunju_ball:reward}">
+						{/if}
+					</td>
+				</tr>
+			<!--{/loop}-->
+			<tr><td></td><td colspan="5" align="center">{$multipage}</td></tr>
+		</tbody>
+	</table>
+</div>
+<script src="{$PL_STATIC}js/jquery-1.11.2.min.js"></script>
+<script>
+	var jq111 = jQuery.noConflict(true);
+	(function($){
+		function doAdminFormatJson(str){
+			var re = /{(.*)}/ig; 
+			var res = re.exec(str);
+			return $.parseJSON(res[0]);
+		}
+		$(".SUN_key").blur(function(){
+			var id = parseInt($(this).attr('rel'));
+			var key = trim($(this).val());
+			if(id ==0 || isNaN(id)){
+				alert("{lang sunju_ball:ad_js_tit_id}");
+				return;
+			}
+			if("" == key){
+				alert("{lang sunju_ball:ad_js_tit_data}");
+				return;
+			}
+			if(strlen(key) != 20){
+				alert("{lang sunju_ball:ad_js_tit_format}");
+				return;
+			}
+			
+			$.post('{$PL_ADMIN_URL}key',{id:id,key:key,formhash:"{FORMHASH}"},function(e){
+				var e = doAdminFormatJson(e);
+				if(e.code == 99){
+					//window.location.reload();
+				}else{
+					alert(e.msg);
+				}
+			});
+		});
+		
+		$(".SUN_go").click(function(){
+			var id = parseInt($(this).attr('rel'));
+			if(id ==0 || isNaN(id)){
+				alert("{lang sunju_ball:ad_js_tit_id}");
+				return;
+			}
+			var this_ = $(this);
+			this_.attr("disabled","disabled").val("{lang sunju_ball:over1}");
+			$.post('{$PL_ADMIN_URL}go',{id:id,formhash:"{FORMHASH}"},function(e){
+				var e = doAdminFormatJson(e);
+				if(e.code == 99){
+					this_.hide();
+					this_.parent().prev().children("span").html("{$PL_P_S[3]}");
+					this_.parent().prev().prev().children("input").attr({readonly:"readonly",disabled:"disabled",});
+				}else{
+					alert(e.msg);
+				}
+			});
+		});
+	})(jq111);
+</script>

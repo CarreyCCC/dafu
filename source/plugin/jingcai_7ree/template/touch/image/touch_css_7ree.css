@@ -1,5 +1,5 @@
-.datalist table { margin-bottom: 15px; width: 100%; border: 1px solid #E6E7E1; background-image: url(bg-001.png); }
-.datalist th, .datalist td { padding: 4px 5px; border: 1px solid #E6E7E1; font-weight: 400; }
+.datalist table { margin-bottom: 15px; width: 100%; border: 1px solid #E6E7E1; background: url(bg-001.jpg) center top no-repeat; background-size:cover; }
+.datalist th, .datalist td { padding: 5px 5px; border: 1px solid #E6E7E1; font-weight: 400; }
 .datalist th img { vertical-align: top; }
 .datalist table .stat_subject { border-right: none; }
 .datalist table .stat_num { padding-right: 15px; text-align: right; border-left: none; }
@@ -8,9 +8,9 @@
 .datalist .datatable, .datalist .datatable th, .datalist .datatable td { border-width: 1px 0; }
 .datalist .fixtable { table-layout: fixed; }
 .colplural, .colplural th, .colplural td, th.highlight, td.highlight { background-color: {COMMONBG}; }
-tr.colplural {background-image:url(005a.png);}
+tr.colplural {background-color:#111;}
 .colplural td{
-	text-align:center;
+	text-align:center; background:#fff;
 }
 
 .adminbtn_7ree{
@@ -471,3 +471,11 @@ span.name {color:$ffffff;}
 	width:85px;
 	margin: 5px 10px 5px 20px;
 }
+
+/* 新增 */
+.colplural h3 {    color: #fff;}
+.colplural a {    color: #fff;}
+table.opengstable_7ree {    background: none; border-color: #0000;}
+table.opengstable_7ree td {border-color: #0000;}
+.datalist th {    background-color: #111;    color: #fff;}
+.wp {position: relative;    top: -20px;}

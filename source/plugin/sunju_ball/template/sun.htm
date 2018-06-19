@@ -1,0 +1,273 @@
+{subtemplate common/header}
+
+<link rel="stylesheet" href="{$PL_STATIC}css/sun.css" type="text/css">
+<script type="text/javascript" src="{$PL_STATIC}js/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="{$PL_STATIC}js/layui/layer.js"></script>
+<div class="sun_area">
+	<div class="sun_l_sidebar">
+		<div class="sun_widget sun_widget_title">
+			<a class="sun_style02">
+				<strong id="SUN_time_diff">{$PL_P_S[$info['status']]}</strong>
+				<h2>{lang sunju_ball:i_di}{$info['period']}{lang sunju_ball:i_qi}</h2>
+				<p>
+					{lang sunju_ball:i_s}{$time_s_f}
+					<span class="sun_pdl50">{lang sunju_ball:i_e}{$time_e_f}</span>
+					<br>
+				</p>
+			</a>
+		</div>
+		<div class="sun_widget sun_widget_number">
+			<div class="sun_num_red sun_fl">
+				<ul id="SUN_red">
+					{eval for($i=1;$i<36;$i++) echo '<li><a href="javascript:void(0)" class="sun_ball_default" rel="'.$i.'">'.$i.'</a></li>'; }
+				</ul>
+			</div>
+			<div class="sun_num_blue sun_fr">
+				<ul id="SUN_blue">
+					{eval for($i=1;$i<10;$i++) echo '<li><a href="javascript:void(0)" class="sun_ball_default" rel="'.$i.'">'.$i.'</a></li>'; }
+				</ul>
+			</div>
+			<div class="sun_num_btn sun_clear">
+				<a class="sun_submit" id="SUN_btn" rel="{$info['id']}">{lang sunju_ball:i_btn_send}</a>
+				<a class="sun_submit sun_rand" id="SUN_btn_rand">{lang sunju_ball:i_btn_rand}</a>
+			</div>
+		</div>
+	</div>
+	<div class="sun_r_sidebar">
+		<div class="sun_widget sun_widget_title">
+			<a class="sun_style05">
+				<strong>{lang sunju_ball:i_record}</strong>
+				<h2>{lang sunju_ball:i_record_tit}</h2>
+				<p class="sun_record">
+					<!--{loop $list $v}-->
+					{lang sunju_ball:i_di}{$v['period']}{lang sunju_ball:i_qi}&nbsp;:&nbsp;&nbsp;<span class="sun_red">{eval echo str_replace(",","&nbsp;",$v['win_num_r'])}</span>&nbsp;<span class="sun_blue">{eval echo str_replace(",","&nbsp;",$v['win_num_b'])}</span><br>
+					<!--{/loop}-->
+				</p>
+			</a>
+		</div>
+		<div class="sun_widget sun_widget_title">
+			<a class="sun_style01">
+				<strong>{lang sunju_ball:i_intro}</strong>
+				<p>
+					{$PL_G['play_intro']}
+					<br>
+				</p>
+			</a>
+		</div>
+	</div>
+	<div class="sun_clear"></div>
+</div>
+<script type="text/javascript">
+var SunLoading;
+var SunIntDiff = {$intDiff};
+function doSunTimerDiff(intDiff){
+    var SunDiffGo = window.setInterval(function(){
+	    var con='{lang sunju_ball:i_diff_time}',
+	    	day=0,
+	        hour=0,
+	        minute=0,
+	        second=0;
+	    if (intDiff > 0) {
+	        day 	= Math.floor(intDiff / (60 * 60 * 24));
+	        hour 	= Math.floor(intDiff / (60 * 60)) - (day * 24);
+	        minute 	= Math.floor(intDiff / 60) - (day * 24 * 60) - (hour * 60);
+	        second 	= Math.floor(intDiff) - (day * 24 * 60 * 60) - (hour * 60 * 60) - (minute * 60);
+		    if (minute <= 9) 	minute = '0' + minute;
+		    if (second <= 9) 	second = '0' + second;
+		    if (day > 0) 		con += day + '{lang sunju_ball:dd}';
+		    document.getElementById('SUN_time_diff').innerHTML = (con + hour + '{lang sunju_ball:h}' + minute + '{lang sunju_ball:i}' + second + '{lang sunju_ball:s}');
+		    intDiff--;
+	    } else {
+	    	document.getElementById('SUN_time_diff').innerHTML = ('{lang sunju_ball:over}');
+	    	clearTimeout(SunDiffGo);
+	    }
+    }, 1000);
+}
+
+var SunSelectNumR = [], SunSelectNumB = [], doSunGetNum = function(num,flag){
+	var b;
+	while(true){
+		b = Math.ceil(Math.random()*num);
+		if("R" == flag){
+			if(isUndefined(SunSelectNumR[b])){
+				return SunSelectNumR[b] = b;
+			}
+		}
+		if("B" == flag){
+			if(isUndefined(SunSelectNumB[b])){
+				return SunSelectNumB[b] = b;
+			}
+		}
+	}
+};
+
+function doSunCountArray(arr){
+	var n = 0;
+    for(var i in arr){
+            n++;
+    }
+    return n;
+}
+function doSunArrayToStr(arr){
+	var res = '';
+    for(var i in arr){
+        res += (arr[i] > 9 ? arr[i] : '0'+arr[i]) +',';
+    }
+    return res.slice(0,-1);
+}
+
+function doSunCheckSelectNum(num,flag,len){
+	if("R" == flag){
+		if(isUndefined(SunSelectNumR[num])){
+			SunSelectNumR[num] = num;
+		}else{
+			delete SunSelectNumR[num];
+			return false;
+		}
+		if(doSunCountArray(SunSelectNumR) <= len){
+			return true;
+		}else {
+			delete SunSelectNumR[num];
+			return false;
+		}
+	}
+	if("B" == flag){
+		if(isUndefined(SunSelectNumB[num])){
+			SunSelectNumB[num] = num;
+		}else{
+			delete SunSelectNumB[num];
+			return false;
+		}
+		if(doSunCountArray(SunSelectNumB) <= len){
+			return true;
+		}else {
+			delete SunSelectNumB[num];
+			return false;
+		}
+	}
+}
+
+var jq111 = jQuery.noConflict(true);
+(function($){
+	SunIntDiff && doSunTimerDiff(SunIntDiff);
+	
+	$("#SUN_red").on('click','li a',function(){
+		var f = doSunCheckSelectNum($(this).attr("rel"),"R",5);
+		$(this).toggleClass("sun_ball_select",f);
+	});
+
+	$("#SUN_blue").on('click','li a',function(){
+		var f = doSunCheckSelectNum($(this).attr("rel"),"B",2);
+		$(this).toggleClass("sun_ball_select",f);
+	});
+	
+	$("#SUN_btn_rand").on("click",function(){
+		$("#SUN_red li a").removeClass("sun_ball_select");
+		$("#SUN_blue li a").removeClass("sun_ball_select");
+		
+		SunSelectNumR = [];
+		for (var i = doSunCountArray(SunSelectNumR); i < 5; i++) {
+			$("#SUN_red li a").eq(doSunGetNum(35,'R')-1).addClass("sun_ball_select");
+		}
+		
+		SunSelectNumB = [];
+		for (var i = doSunCountArray(SunSelectNumB); i < 2; i++) {
+			$("#SUN_blue li a").eq(doSunGetNum(9,'B')-1).addClass("sun_ball_select");
+		}
+	});
+
+	layer.config({
+		skin: 'layui-layer-lan',
+		closeBtn: 1,
+		title:'{lang sunju_ball:title}',
+		btn:'{lang sunju_ball:close}',
+	})
+
+	$("#SUN_btn").on("click",function(){
+		if (doSunCountArray(SunSelectNumR) != 5 || doSunCountArray(SunSelectNumB) != 2) {
+			layer.alert('{lang sunju_ball:i_tit_err_1}', {
+				icon:2
+		    });
+			return;
+		}
+		if (SunIntDiff == 0) {
+			layer.alert('{lang sunju_ball:i_tit_err_2}', {
+				icon:2
+		    });
+			return;
+		}
+		
+		var ajaxurl = "{$PL_URL}&send=send";
+		var query = new Object();
+		query.r = doSunArrayToStr(SunSelectNumR);
+		query.b = doSunArrayToStr(SunSelectNumB);
+		query.pid = $(this).attr("rel");
+		query.formhash = "{FORMHASH}";
+		
+		var ajaxTimeoutTest = $.ajax({
+			url: ajaxurl,
+			timeout:20000,
+			dataType: "json",
+			data:query,
+			type: "POST",
+			beforeSend: function () {
+				$("#SUN_btn").attr('disabled', 'disabled');
+				SunLoading = layer.load(2, {
+					shade: [0.1,'#000'], //0.1透明度的白色背景
+					btn:""
+				});
+			},
+			complete: function (XMLHttpRequest,status) {
+				if(status == 'timeout'){// 超时,status还有success,error等值的情况
+					ajaxTimeoutTest.abort();
+					layer.alert('{lang sunju_ball:sys_error}', {
+						icon:2
+				    });
+				}
+				$("#SUN_btn").removeAttr('disabled');
+				layer.close(SunLoading);
+			},
+			success: function(data){
+				var info = "",icon = 5;
+				if(99 == data.code){
+					info = "{lang sunju_ball:i_tit_succ}";
+					$("#SUN_red li a").removeClass("sun_ball_select");
+					$("#SUN_blue li a").removeClass("sun_ball_select");
+					SunSelectNumR = [];
+					SunSelectNumB = [];
+					icon = 6;
+				}else{
+					switch(data.code){
+						case -1:
+							info = "{lang sunju_ball:i_tit_err_1}";
+							break;
+						case -2:
+							info = "{lang sunju_ball:i_tit_err_2}";
+							break;
+						case -3:
+							info = "{lang sunju_ball:i_tit_err_3}";
+							break;
+						case -4:
+							info = "{lang sunju_ball:i_tit_err_4}";
+							break;
+						case -11:
+							info = "{lang sunju_ball:ill}";
+							break;
+						default:
+							info ="{lang sunju_ball:service_err}";
+					}
+				}
+				layer.alert(info, {
+					icon:icon
+			    });
+			},
+			error:function(ajaxobj){
+				layer.alert('{lang sunju_ball:sys_error}', {
+					icon:2
+			    });
+			}
+		});
+	});
+})(jq111);
+</script>
+{subtemplate common/footer}
