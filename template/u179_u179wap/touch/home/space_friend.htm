@@ -1,0 +1,116 @@
+<!--{template common/header}-->
+
+ <div data-role="navbar" class="uiddiv ui-bar-d u179_color_333">
+
+    <ul>
+
+
+      <li><a href="home.php?mod=space&do=friend" data-transition="none" data-inline="true"  >全部</a></li>
+
+      <li><a href="home.php?mod=space&do=friend&view=online&type=friend" data-transition="none">在線好友</a></li>
+
+      <li><a href="home.php?mod=space&do=friend&view=blacklist" data-transition="none">黑名單</a></li>
+
+      <li><a href="home.php?mod=spacecp&ac=friend&op=request" data-transition="none">好友請求</a></li>
+
+ 
+
+
+    </ul>
+    <ul>
+
+
+      <li><a href="home.php?mod=spacecp&ac=search&mobile=2" data-transition="none" data-inline="true"  >搜索用戶&添加好友</a></li>
+
+ 
+
+
+    </ul>
+
+  </div>
+			<!--{if $space[self]}--> 
+				<!--{if $_GET['view']=='blacklist'}-->				
+				<div class="ftfm brtb xg1">
+					<form method="post" autocomplete="off" name="blackform" action="home.php?mod=spacecp&ac=friend&op=blacklist&start=$_GET[start]">
+						<table cellpadding="0" cellspacing="0" >
+							<tr>
+								<td>{lang username}</td>
+								<th>
+									<p><input type="text" name="username" value="" size="15" style="width:150px;" /></p>
+                                </th>
+                                <td>
+									<button type="submit" name="blacklistsubmit_btn" id="moodsubmit_btn" value="true" class="btn_pn br3 btn_pn_blue"><em>{lang add}</em></button>
+								</td>
+							</tr>
+						</table>
+						<input type="hidden" name="blacklistsubmit" value="true" />
+						<input type="hidden" name="formhash" value="{FORMHASH}" />
+					</form>
+				</div>
+				<!--{/if}-->
+			<!--{/if}-->
+
+						<!--{if $list}-->
+							<div id="friend_ul">
+								<ul class="buddy">
+								<!--{loop $list $key $value}-->
+									<li id="friend_{$value[uid]}_li">
+									<!--{if $value[username] == ''}-->
+										<div class="friend_nm">{lang anonymity}</div>
+									<!--{else}-->
+										<div class="friend_avt">
+											<a href="home.php?mod=space&uid=$value[uid]&do=profile&from=space&mobile=2" c="1">
+												<!--{if $ols[$value[uid]]}--><em class="gol" title="{lang online} {date($ols[$value[uid]], 'H:i')}"></em><!--{/if}-->
+												<!--{avatar($value[uid],small)}-->
+											</a>
+										</div>
+										<div class="friend_nm">
+											<a href="home.php?mod=space&uid=$value[uid]&do=profile&from=space&mobile=2" class="xi2"{eval g_color($value[groupid]);}>$value[username]</a>
+											<!--{eval g_icon($value[groupid]);}-->
+											<!--{if $value['videostatus']}-->
+												<img src="{IMGDIR}/videophoto.gif" alt="videophoto" class="vm" />
+											<!--{/if}-->                                            
+											<span class="xg1 y">
+											<!--{if $_GET['view'] == 'blacklist'}-->
+												<a href="home.php?mod=spacecp&ac=friend&op=blacklist&subop=delete&uid=$value[uid]&start=$_GET[start]">{lang delete_blacklist}</a>
+
+											<!--{elseif $_GET['view'] == 'online'}-->
+												<!--{date($ols[$value[uid]], 'H:i')}-->
+											<!--{else}-->
+												{lang hot}(<span id="spannum_$value[uid]">$value[num]</span>)
+											<!--{/if}-->
+											</span>
+                                            
+										</div>										
+									<!--{/if}-->
+
+
+
+									</li>
+								<!--{/loop}-->
+								</ul>
+							</div>
+							<!--{if $multi}--><div class="pgbox">$multi</div><!--{/if}-->
+
+						<script type="text/javascript">
+							function succeedhandle_followmod(url, msg, values) {
+								var fObj = $(values['from']+values['fuid']);
+								if(values['type'] == 'add') {
+									fObj.innerHTML = '{lang follow_del}';
+									fObj.className = 'flw_btn_unfo';
+									fObj.href = 'home.php?mod=spacecp&ac=follow&op=del&fuid='+values['fuid']+'&from='+values['from'];
+								} else if(values['type'] == 'del') {
+									fObj.innerHTML = '{lang follow_add}TA';
+									fObj.className = 'flw_btn_fo';
+									fObj.href = 'home.php?mod=spacecp&ac=follow&op=add&hash={FORMHASH}&fuid='+values['fuid']+'&from='+values['from'];
+								}
+							}
+						</script>
+
+			<!--{else}-->
+            
+				<div class="wmt brtb">{lang count_member}</div>
+				
+			<!--{/if}-->
+
+<!--{template common/footer}-->

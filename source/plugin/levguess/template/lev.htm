@@ -1,0 +1,375 @@
+{subtemplate common/header} {eval include template($PLNAME.':js');}
+
+<link rel="stylesheet" href="{$PLSTATIC}css/common.css" type="text/css">
+<link rel="stylesheet" href="{$PLSTATIC}css/css.css" type="text/css">
+<div id="bd" class="lbd">
+
+<div id="mod_buy_wrapper" class="col-primary  show-buy">
+<div class="buy-box cp-ssc-old">
+<div class="buy-logo">
+<h2>{$lev_lang[guessname]}</h2>
+</div>
+<div class="buy-con">
+<h3>{$lev_lang[d]} <em id="mod_issue" style="color:red">{$times}</em> {$lev_lang[q]}</h3>
+<div id="mod_prebuy_tips" class="ys">yu sell
+<div class="f-tip"></div>
+</div>
+<div class="tips">{$lev_lang[awardtime]}</div>
+</div>
+<div class="buy-issue">
+<div id="mod_issue_tips" class="tips">
+<span class="ico-clock"><!-- 时钟icon --></span>
+<span class="tips-font">{$lev_lang[endtime]}</span> 
+<span class="time" id="oTime">00 : 00 : 00</span></div>
+<div id="mod_issue_end">{$lev_lang[todaytime]}{eval echo lev_guess::$PL_G[endtime];}</div>
+</div>
+</div>
+
+<div class="tab-panel">
+<div id="cp_choose" class="cp-choose  show-fs">
+
+<div id="c3d_z6" class="mod-buy-box tabbd_2  on">
+<div id="box_z6_fs" class="hide tabbdz6  on">
+<div class="dotted-bg" style="text-align: left;">
+<div class="tips">{eval echo lev_guess::$PL_G[desc];}</div>
+</div>
+<div class="cp-box">
+<ul class="describe">
+<li><span class="tip-arrow"><span>{$lev_lang[sltnum]}</span></span></li>
+<!--<li class="gray"></li>-->
+</ul>
+<div id="z6_fs_ball" class="cp-red">
+<ul>
+<li><span class="ball js-z6-fs-ball ball_0">0</span></li>
+<li><span class="ball js-z6-fs-ball ball_1">1</span></li>
+<li><span class="ball js-z6-fs-ball ball_2">2</span></li>
+<li><span class="ball js-z6-fs-ball ball_3">3</span></li>
+<li><span class="ball js-z6-fs-ball ball_4">4</span></li>
+<li><span class="ball js-z6-fs-ball ball_5">5</span></li>
+<li><span class="ball js-z6-fs-ball ball_6">6</span></li>
+<li><span class="ball js-z6-fs-ball ball_7">7</span></li>
+<li><span class="ball js-z6-fs-ball ball_8">8</span></li>
+<li><span class="ball js-z6-fs-ball ball_9">9</span></li>
+</ul>
+</div>
+<div class="dohelp suare">
+<ul>
+<li><a class="help-all" href="javascript:;" onclick="sltball(1)">{$lev_lang[allnum]}</a></li>
+<li><a class="help-big" href="javascript:;" onclick="sltball(2)">{$lev_lang[bignum]}</a></li>
+<li><a class="help-small" href="javascript:;" onclick="sltball(3)">{$lev_lang[minnum]}</a></li>
+<li><a class="help-odd" href="javascript:;" onclick="sltball(4)">{$lev_lang[jinum]}</a></li>
+<li><a class="help-even" href="javascript:;" onclick="sltball(5)">{$lev_lang[ounum]}</a></li>
+<li><a class="help-clear" href="javascript:;" onclick="sltball(0)">{$lev_lang[qinum]}</a></li>
+</ul>
+
+</div>
+</div>
+<div class="dotted-bg">
+<div class="total">{$lev_lang[sltednum]} <em id="z6_fs_num"><input type="text" id="guessnum" value="0" class="px" /></em></div>
+</div>
+</div>
+</div>
+
+<div id="mod_btn_area" class="for-btn buy"><!-- buy | pause | stop --> 
+<a href="javascript:;" onclick="do_submit(1)" class="buy-btn" onclick="do_submit(1)">{$lev_lang[buy]}</a> 
+<a href="javascript:;" onclick="do_submit('pause')" class="pause-btn">{$lev_lang[pause]}</a>
+<a href="javascript:;" onclick="do_submit('stop')" class="stop-btn">{$lev_lang[stop]}</a></div>
+</div>
+<a name="cyhm_page"></a>
+</div>
+{if lev_guess::$PL_G[is_show]}
+<div class="com-buy">
+<div class="menu-yel-hd clear">
+<h2 class="fl" style="padding:0 10px">{$lev_lang[buyuser]}</h2>
+</div>
+<div id="hm_result_tj" class="bd">
+<table class="com-tb">
+<tbody>
+<tr>
+<th>{$lev_lang[order]}</th>
+<th>{$lev_lang[nick]}</th>
+<th>{$lev_lang[guessnum]}</th>
+<th>{$lev_lang[fortime]}</th>
+</tr>
+{loop $buyuser $r}
+<tr class="" onmouseover="this.className=' on'" onmouseout="this.className=''">
+<td><span class="ico-to-top"></span></td>
+<td>{$r[username]}</td>
+<td><span style="line-height:24px;color:#CC0000;letter-spacing:2px;" class="title">{$r[num]}</span></td>
+<td>{eval echo dgmdate($r['addtime'], 'u');}</td>
+</tr>
+{/loop}
+</tbody>
+</table>
+</div>
+</div>
+{/if}
+</div>
+<div class="col-aside">
+<div id="cp_login_mod" class="cp-user">
+
+<div style="display: block; visibility: visible;" id="user_login" class="hide">
+<div class="login">
+<dl class="user-info clear">
+<dt class="user-face">
+<span title="初出茅庐，注册时间为0~90天" class="user-icon young" id="user_face"><!-- 用户等级 --></span></dt>
+<!-- 初出茅庐young,身经百战youth,江湖老手old -->
+<dd>
+<p>{$lev_lang[welcome]}<span id="lm_cp_nickname"><a href="#" class="cp-name" target="_blank">{$_G[username]}</a></span>&nbsp;&nbsp;
+<a href="#" class="hide" id="modify_nick"></a></p>
+<p>{$lev_lang[level]}<a href="#" title="" id="login_mode_tips" class="img-link">
+<span class="level-0" id="cp_level"></span></a>
+<a class="ico-gift" id="priv_gift_icon" title="" href="#"></a></p>
+</dd>
+</dl>
+
+<div id="lm_balance_li" class="float-box">
+<!-- float-show -->
+{$lev_lang[srhmony]}
+<a id="lm_lnk_balance" href="javascript:;" onclick="$$('#lm_balance_panel').show();" class="query">{$lev_lang[search]}
+<span class="arrow"><!-- 箭头 --></span></a>
+
+<div style="display: none;" id="lm_balance_panel" class="float-con">
+<ul class="con">
+<li>{$lev_lang[mymony]}<span id="lm_balance"><em><strong>{$mymoney}</strong></em>&nbsp;{$lev_lang[yuan]}</span></li>
+</ul>
+<a id="lm_balance_closer" class="close" href="javascript:;" onclick="$$('#lm_balance_panel').hide();">{$lev_lang[close]}</a></div>
+<a class="link" href="home.php?mod=spacecp&ac=credit&op=buy" target="_blank">{$lev_lang[addmony]}</a>
+</div>
+<div class="msg">{$lev_lang[you]} <em id="lm_unprize">{$mytimes}</em> {$lev_lang[myfa]}<span class="space">
+<a id="lm_lnk_mycp" class="link" href="javascript:;" onclick="getmyfa()">{$lev_lang[view]}</a></span>
+</div>
+<!--<ul class="ld-info">
+<li id="ritual_beans" class="">
+<span class="cell"><span class="ico-ldou"> icon </span>{$lev_lang[lidou]}<strong id="ritual_beans_count" class="high-l">0</strong></span>
+<a href="#" target="_blank">{$lev_lang[libao]}</a></li>
+</ul>-->
+</div>
+</div>
+</div>
+
+<div id="side_ad" class="side-ad hide"></div>
+
+<div class="cp-result">
+<div class="menu-gray-hd">
+<h3>{$lev_lang[newaward]} <span id="last_award_issue" style="color:#CC0000">{$lev_lang[d]} {$timesed[0][times]} {$lev_lang[q]}</span></h3>
+</div>
+<div id="award_wrapper" class="bd">
+<ul class="result-ball">
+{$nowaward}
+</ul>
+<div class="recent">
+<a class="chart-link" href="javascript:;" onclick="yguessnum()">{$lev_lang[viewimg]}</a>
+<a href="javascript:;" onclick="shownear()">{$lev_lang[near10]}
+<span class="ico-arrow-open" id="ico_arawd_toggle"></span></a></div>
+<div id="result_list" class="result-table">
+<table>
+<thead>
+<tr>
+<th>{$lev_lang[oldaward]}</th>
+<th>{$lev_lang[oldawardnum]}</th>
+</tr>
+</thead>
+<tbody>
+{loop $timesed $v}
+<tr>
+<td>{$v[times]}</td>
+<td style="color:red;letter-spacing:3px">{$v[awardnum]}</td>
+</tr>
+{/loop}
+</tbody>
+<tfoot>
+<tr>
+<td colspan="2"><a href="#" class="more">{$lev_lang[more]}</a></td>
+</tr>
+</tfoot>
+</table>
+</div>
+</div>
+</div>
+<div id="latest_winner" class="cp-winner">
+<div class="menu-gray-hd">
+<h3>{$lev_lang[awardperson]}</h3>
+
+</div>
+<div class="bd clear">
+<ul style="display: block;" id="latest_winner_list_dg" class="win-roster clear">
+{loop $isaward $r}
+<li class="winner"><span class="ico-rank-1"></span> 
+<span class="name"> <a href="#" target="_blank">{$r[username]}</a>
+</span> <a class="js-ssq-winner">{$r[times]}</a> <span class="money"><em></em></span>
+</li>
+{/loop}
+</ul>
+<a href="#" class="more" target="_blank">{$lev_lang[more]}</a></div>
+</div>
+</div>
+</div>
+<script type="text/javascript">
+
+$$('.js-z6-fs-ball').click(function () {
+	if (this.id) {$$(this).removeClass('red');this.id = ''} else {$$(this).addClass('red');$$('#guessnum').val($$('#guessnum').val()+$$(this).text());this.id = '1';}
+});
+
+function yguessnum(page) {
+	$$.get('plugin.php?id=levguess:lev&ajax&yguessnum&page='+ page, {}, function (data) {
+		art.dialog({id:'yguessnum'}).close();
+		art.dialog({id:'yguessnum', title:'{$lev_lang[d]} {$timesed[0][times]} {$lev_lang[q]}', content:data});
+	});
+}
+
+function getmyfa() {
+	$$.get('plugin.php?id=levguess:lev&ajax&fa&'+ Math.random(), {}, function (data) {
+		art.dialog({id:'myfa', title:'{$lev_lang[myfas]}', content:data});
+	});
+}
+
+function shownear() {
+	if ($$('#result_list').attr('data')) {
+		$$('#result_list').hide();
+		$$('#result_list').attr('data', '');
+		$$('#ico_arawd_toggle').attr('class', 'ico-arrow-open');
+	}else {
+		$$('#result_list').show();
+		$$('#result_list').attr('data', '1');
+		$$('#ico_arawd_toggle').attr('class', 'ico-arrow-close');
+	}
+}
+
+function sltball(op) {
+	var numstr = [0,1,2,3,4,5,6,7,8,9];
+	switch (op) {
+		case 1 :
+			$$('.js-z6-fs-ball').addClass('red');
+			break;
+		case 2 :
+			$$('.js-z6-fs-ball').removeClass('red');
+			for (i=5; i<10; i++) {
+				$$('.ball_'+ i).addClass('red');
+			}
+			numstr = [5,6,7,8,9];
+			break;
+		case 3 :
+			$$('.js-z6-fs-ball').removeClass('red');
+			for (i=0; i<5; i++) {
+				$$('.ball_'+ i).addClass('red');
+			}
+			numstr = [0,1,2,3,4];
+			break;
+		case 4 :
+			$$('.js-z6-fs-ball').removeClass('red');
+			for (i=0; i<10; i++) {
+				if (i%2) $$('.ball_'+ i).addClass('red');
+			}
+			numstr = [1,3,5,7,9];
+			break;
+		case 5 :
+			$$('.js-z6-fs-ball').removeClass('red');
+			for (i=0; i<10; i++) {
+				if (!(i%2)) $$('.ball_'+ i).addClass('red');
+			}
+			numstr = [0,2,4,6,8];
+			break;
+		default:
+			$$('.js-z6-fs-ball').removeClass('red');
+			break;
+	}
+	rand_om(numstr);
+}
+
+function rand_om(str, len) {
+	if (!len) len = parseInt(Math.random()*5+1);
+	guessnum = '';
+	for (i=0; i<len; i++) {
+		guessnum += str[parseInt(Math.random()*(str.length-1)+1)];
+	}
+	$$('#guessnum').val(guessnum);
+}
+
+function do_submit(op) {
+	if (op =='pause') {
+		art.dialog.tips('{$lev_lang[pause]}', 3);
+		return false;
+	}else if (op =='stop') {
+		art.dialog.tips('{$lev_lang[stop]}', 3);
+		return false;
+	}
+	var guessnum = 0;
+	var guessid  = $$('#guessnum')
+	if (op) {
+		guessnum = parseInt(guessid.val());
+		if (!guessnum) {
+			art.dialog.tips('{$lev_lang[errnumtips]}', 3);
+			guessid.focus();
+			return false;
+		}
+	}
+	if (confirm('{$lev_lang[confirmtips]}')) {
+		$$.get('{eval echo lev_guess::$PLURL;}&ajax&num='+ guessnum, {}, function (data) {
+			if (parseInt(data) =="1") {
+				art.dialog.tips('{$lev_lang[succeed]}');
+			}else if (data =="-3") {
+				art.dialog.tips('{$lev_lang[noarea]}', 3);
+			}else if (data =="-5") {
+				art.dialog.tips('{$lev_lang[islogin]}', 3);
+			}else if (data =="-2") {
+				art.dialog.tips('{$lev_lang[yueee]}', 3);
+			}else if (data =="-4") {
+				art.dialog.tips('{$lev_lang[maxednum]}', 3);
+			}else {
+				art.dialog.tips(data, 3);
+			}
+		});
+	}
+}
+
+$$.get('plugin.php?id=levguess:lev&ajax&isaward&'+ Math.random(), {}, function (data) {});
+
+</script>
+<script type="text/javascript"> 
+    var _t; 
+    var _h = {$_h};
+    var _m = {$_m};
+    var _s = {$_s};
+    var _v = formatTime(_h + ' : ' + _m + ' : ' + _s);
+
+    function doTime() { 
+        if (parseInt(_h) == 0 && parseInt(_m) == 0 && parseInt(_s) == 0) { 
+            _v = '00 : 00 : 00'; 
+            clearTimeout(_t); 
+        } else { 
+            _s --; 
+            if (_s == -1) { 
+                 _m --; 
+                 _s = 59; 
+            } 
+            if (_m == -1) { 
+                 _h --; 
+                 _m = 59; 
+            } 
+            _v = formatTime(_h + ' : ' + _m + ' : ' + _s); 
+            _t = setTimeout('doTime()', 1000); 
+        }  
+        $$('#oTime').html(_v); 
+    } 
+   
+    function formatTime(_time) { 
+        return _time.replace(/\b(\w)\b/g, '0$1'); 
+    } 
+
+    $$('#oTime').html(_v);
+    _t = setTimeout('doTime()', 1000); 
+        
+</script>
+{subtemplate common/footer}
+
+
+
+
+
+
+
+
+
+
+

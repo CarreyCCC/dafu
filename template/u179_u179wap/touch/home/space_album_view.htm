@@ -1,0 +1,24 @@
+<!--{template common/header}-->
+  <div class="ct bl_line"> 
+    <div class="pt"><a href="forum.php">首頁</a> <em> &gt; </em> <a href="home.php?mod=space&do=album&view=all&mobile=2">相冊</a></div>
+		
+		<!--{if $list}-->			
+            <div class="album">
+			<ul>
+			<!--{loop $list $key $value}-->
+				<li>
+				<a href="home.php?mod=space&uid=$value[uid]&do=$do&picid=$value[picid]"><!--{if $value[pic]}--><img src="$value[pic]" alt="" /><!--{/if}--></a>
+				</li>
+			<!--{/loop}-->
+			</ul>
+            </div>			
+			<!--{if $multi}--><div class="pgbox">$multi</div><!--{/if}-->
+		<!--{else}-->
+			<!--{if !$pricount}--><div class="wmt">{lang no_pics}</div><!--{/if}-->			
+		<!--{/if}-->
+        
+
+
+		</div>
+
+<!--{template common/footer}-->

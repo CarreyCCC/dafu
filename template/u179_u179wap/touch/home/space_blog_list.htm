@@ -1,0 +1,79 @@
+<!--{template common/header}-->
+ <div data-role="navbar" class="uiddiv ui-bar-d u179_color_333">
+
+    <ul>
+
+
+      <li><a href="home.php?mod=space&do=blog&view=we" data-transition="none" data-inline="true"  >好友日誌</a></li>
+
+      <li><a href="home.php?mod=space&do=blog&view=me" data-transition="none">我的日誌</a></li>
+
+      <li><a href="home.php?mod=space&do=blog&view=all" data-transition="none">隨便看看</a></li>
+ 
+
+
+    </ul>
+
+  </div>
+<div class="ct">
+
+
+			<!--{if $searchkey}-->
+				<p class="tbmu">{lang follow_search_blog} <span style="color: red; font-weight: 700;">$searchkey</span> {lang doing_record_list}</p>
+			<!--{/if}-->
+
+		<!--{if $count}-->
+			<div id="alist" class="blog">
+            <ul>            
+			<!--{loop $list $k $value}-->
+				<li class="brtb">
+					<!--{if empty($diymode)}-->
+						<div class="blog_avt"><a href="home.php?mod=space&uid=$value[uid]&do=profile&from=space&mobile=2" c="1"><!--{avatar($value[uid],small)}--></a></div>				
+					<!--{/if}-->
+					<h1 class="mbn">
+						<a href="home.php?mod=space&uid=$value[uid]&do=blog&id=$value[blogid]" class="xi2">$value[subject]</a>						
+					</h1>                    
+					<p class="mbm">
+						<!--{if empty($diymode)}--><a href="home.php?mod=space&uid=$value[uid]&do=profile&from=space&mobile=2">$value[username]</a> <!--{/if}--> <span class="xg1">$value[dateline]</span>
+					</p>
+					<div class="message mbm"{if $value[pic]} style="min-height:80px;"{/if} id="blog_article_$value[blogid]">
+						<!--{if $value[pic]}--><div class="y"><a href="home.php?mod=space&uid=$value[uid]&do=blog&id=$value[blogid]" target="_blank"><img src="$value[pic]" alt="$value[subject]" class="tn" /></a></div><!--{/if}-->
+						$value[message]
+					</div>
+					<p class="xg1">
+						<!--{if $value[viewnum]}-->$value[viewnum] {lang blog_read}
+                        <span class="pipe">|</span>
+                        <!--{/if}-->						
+                        $value[replynum] {lang blog_replay}
+                        <!--{if $value['hot']}--> <span class="pipe">|</span> {lang hot} $value[hot]<!--{/if}-->						
+						<!--{if $_GET['view']=='me' && $space['self']}-->
+							<span class="pipe">|</span>
+                            <a href="home.php?mod=spacecp&ac=blog&blogid=$value[blogid]&op=delete&handlekey=delbloghk_{$value[blogid]}" >{lang delete}</a>
+						<!--{/if}-->						
+					</p>
+				</li>
+			<!--{/loop}-->
+            </ul>
+			</div>
+            
+            
+<!--{if $wappages == 1}--> 
+<!--{if $count > $perpage}-->
+
+<!--{/if}-->
+<!--{else}-->
+<!--{if $multi}--><div class="pgbox">$multi</div><!--{/if}-->
+<!--{/if}-->          
+
+		<!--{else}-->
+			<div class="wmt brtb">{lang no_related_blog}</div>
+		<!--{/if}-->
+
+<script type="text/javascript">
+	function fuidgoto(fuid) {
+		var parameter = fuid != '' ? '&fuid='+fuid : '';
+		window.location.href = 'home.php?mod=space&do=blog&view=we'+parameter;
+	}
+</script>
+</div>
+<!--{template common/footer}-->

@@ -1,0 +1,66 @@
+<!--{template common/header}-->  
+
+ <div data-role="navbar" class="uiddiv ui-bar-d u179_color_333">
+
+    <ul>
+
+
+      <li><a href="home.php?mod=space&do=$do&view=we" data-transition="none" data-inline="true"  >我和好友</a></li>
+
+      <li><a href="home.php?mod=space&do=$do&view=me" data-transition="none">我的記錄</a></li>
+
+      <li><a href="home.php?mod=space&do=$do&view=all" data-transition="none">隨便看看</a></li>
+
+ 
+
+
+    </ul>
+
+  </div>
+
+
+    <div class="ct">         		      
+					<!--{if helper_access::check_module('doing')}-->
+					<!--{subtemplate home/space_doing_form}-->
+
+					<!--{/if}-->
+
+		
+		<!--{if $dolist}--> 
+        
+            <ul class="doing">
+			<!--{loop $dolist $dv}-->
+			<!--{eval $doid = $dv[doid];}-->
+			<!--{eval $_GET[key] = $key = random(8);}-->
+				<li>
+				<a href="home.php?mod=space&uid=$dv[uid]&do=profile&from=space&mobile=2" class="avatar"><!--{avatar($dv[uid],small)}--></a>
+                                
+					<div class="doing_user">
+                    <!--{if empty($diymode)}--><a href="home.php?mod=space&uid=$dv[uid]&do=profile&from=space&mobile=2">$dv[username]</a><!--{/if}-->
+                    <span class="u179_y"><!--{date($dv['dateline'], 'u')}--></span>
+                    </div>
+                    
+                    <p class="mbb">$dv[message]</p>
+                    
+					<!--{eval $list = $clist[$doid];}-->											
+					<!--{template home/space_doing_li}-->
+                     <!--{if $dv[uid]==$_G[uid]}-->
+                     <p style=" height:14px;">
+                     <a href="home.php?mod=spacecp&ac=doing&op=delete&doid=$doid&id=$dv[id]&handlekey=doinghk_{$doid}_$dv[id]" class="xi2 u179_y">({lang delete})</a>
+                     </p>
+                     <!--{/if}-->                     
+				</li>
+			<!--{/loop}-->
+            </ul>
+
+			<!--{if $multi}--><div class="pgbox">$multi</div><!--{/if}-->
+            
+		<!--{else}-->
+        
+			<div class="wmt">{lang doing_no_replay}<!--{if $space[self]}-->{lang doing_now}<!--{/if}--></div>
+            
+		<!--{/if}-->
+</div>
+
+
+<!--{template common/footer}-->
