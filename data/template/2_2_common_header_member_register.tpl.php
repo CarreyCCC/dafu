@@ -1,6 +1,6 @@
 <?php if(!defined('IN_DISCUZ')) exit('Access Denied'); 
 0
-|| checktplrefresh('./template/yunzhan_zq/common/header.htm', './template/yunzhan_zq/common/header_common.htm', 1529560372, '2', './data/template/2_2_common_header_member_register.tpl.php', './template/yunzhan_zq', 'common/header_member_register')
+|| checktplrefresh('./template/yunzhan_zq/common/header.htm', './template/yunzhan_zq/common/header_common.htm', 1529664127, '2', './data/template/2_2_common_header_member_register.tpl.php', './template/yunzhan_zq', 'common/header_member_register')
 ;?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -148,10 +148,11 @@ EOF;
           (<?php echo $_G['member']['newprompt'];?>)
           <?php } ?>
           </a></span>
-  <span><a href="home.php?mod=spacecp&amp;ac=credit&amp;showcredit=1" id="extcreditmenu">目前積分: <?php echo $_G['member']['credits'];?></a></span>
+  <span><a href="home.php?mod=spacecp&amp;ac=credit&amp;showcredit=1" id="extcreditmenu">目前金幣: <?php echo getuserprofile('extcredits2');; ?> </a></span>
           <?php if($_G['setting']['taskon'] && !empty($_G['cookie']['taskdoing_'.$_G['uid']])) { ?>
           <span><a href="home.php?mod=task&amp;item=doing" id="task_ntc" class="new">進行中的任務</a></span>
   <span><a href="https://www.aihx888.com/home.php?mod=spacecp&amp;ac=credit&amp;op=buy">充值序號</a></span>
+
           <?php } ?>
           <a href="home.php?mod=space&amp;uid=<?php echo $_G['uid'];?>" target="_blank" title="訪問我的空間" id="umnav" class="username" onMouseOver="showMenu({'ctrlid':this.id,'ctrlclass':'a'})">
           <?php echo avatar($_G[uid],small);?>          </a> </li>
@@ -175,7 +176,7 @@ EOF;
     </div>	
     <div id="yunzhan_user">
       <ul id="yunzhan_nav">
-        <li id="login_u_box"> <span><a href="javascript:;" onClick="javascript:lsSubmit();" class="nousername">登录</a></span> <span><a href="member.php?mod=register" class="btn-register">注册</a></span> <span><a href="https://www.aihx888.com/home.php?mod=spacecp&amp;ac=credit&amp;op=buy">充值序號</a></span></li>
+        <li id="login_u_box"> <span><a href="javascript:;" onClick="javascript:lsSubmit();" class="nousername">登錄</a></span> <span><a href="member.php?mod=register" class="btn-register">註冊</a></span> <span><a href="https://www.aihx888.com/home.php?mod=spacecp&amp;ac=credit&amp;op=buy">充值序號</a></span></li>
         
   </ul>
     </div>

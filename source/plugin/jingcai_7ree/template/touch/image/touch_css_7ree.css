@@ -15,14 +15,15 @@ tr.colplural {background-color:#111;}
 
 .adminbtn_7ree{
 		display:block;
-		border:1px solid #CFCFCF;
+		border:0px solid #CFCFCF;
 		width:100px;
 		height:30px;
 		line-height:30px;
 		float:left;
 		text-align:center;
    		margin:5px 20px 5px 20px;
-		background-color:#E5EDF2;
+		
+		background-image: url(007a.png);
 	
 }
 .opbtn_7ree{
@@ -479,3 +480,4 @@ table.opengstable_7ree {    background: none; border-color: #0000;}
 table.opengstable_7ree td {border-color: #0000;}
 .datalist th {    background-color: #111;    color: #fff;}
 .wp {position: relative;    top: -20px;}
+th.mybet {background: url(008a.png) center top no-repeat;}

@@ -1,9 +1,9 @@
 <?php
 //Discuz! cache file, DO NOT modify me!
-//Identify: 09c009fa166a67796cc20aa4038d8e9c
+//Identify: ae93b843416b5aa195a05de6f2d5c9b0
 
 $domain = array (
-  'defaultindex' => 'plugin.php?id=jingcai_7ree:jingcai_7ree',
+  'defaultindex' => 'forum.php',
   'holddomain' => 'www|*blog*|*space*|*bbs*',
   'list' => 
   array (

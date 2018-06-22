@@ -3,6 +3,7 @@
 body { font-family:"Lantinghei SC", "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif,'MicrosoftYaHeiLight','Microsoft YaHei Light','Microsoft YaHei';position:relative; }
 #chart { margin:5px 0; }
 .title { font-weight:100; }
+.rfm .px {height:auto;}
 a{ color:#333}
 a:hover { text-decoration:none;}
 p img { margin:0; }
@@ -133,7 +134,7 @@ nav, footer, section, article{display: block}
 .bodycontainer.nav_mincontainer { z-index:10; }
 .nav_content { margin:0 auto; background:none;z-index:13; }
 .yunzhan_m_n a { color:#fff; }
-.logo { float:left; margin-top:5px; overflow:hidden; }
+.logo { float:left; margin-top:5px; overflow:hidden; margin-right:100px; }
 .logo_ad{ overflow:hidden; }
 .p_pop li{ border-bottom:1px solid #f7f7f7; }
 .p_pop a{ padding:3px 10px; border-bottom:none;}
@@ -561,8 +562,8 @@ button {
   top: 0;
   width: 100%;
   z-index: 1030;
-  height: 88px;
-  background-color: rgba(0, 0, 0, 0.6);
+ /* height: 88px;
+  background-color: rgba(0, 0, 0, 0.6); */
   transition: .2s ease;
 }
 
@@ -1135,12 +1136,12 @@ footer p {
 #L_header {
 
     position: relative;
-    top: -88px;
+/*    top: -88px; */
 	background: #fff;
 
 }
 
-.px, .pt {height:auto}
+
 
 
 

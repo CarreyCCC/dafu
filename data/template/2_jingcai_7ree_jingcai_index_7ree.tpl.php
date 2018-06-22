@@ -1,8 +1,8 @@
 <?php if(!defined('IN_DISCUZ')) exit('Access Denied'); hookscriptoutput('jingcai_index_7ree');
 0
-|| checktplrefresh('./source/plugin/jingcai_7ree/template/jingcai_index_7ree.htm', './template/yunzhan_zq/common/header.htm', 1529560369, 'jingcai_7ree', './data/template/2_jingcai_7ree_jingcai_index_7ree.tpl.php', './source/plugin/jingcai_7ree/template', 'jingcai_index_7ree')
-|| checktplrefresh('./source/plugin/jingcai_7ree/template/jingcai_index_7ree.htm', './template/yunzhan_zq/common/footer.htm', 1529560369, 'jingcai_7ree', './data/template/2_jingcai_7ree_jingcai_index_7ree.tpl.php', './source/plugin/jingcai_7ree/template', 'jingcai_index_7ree')
-|| checktplrefresh('./source/plugin/jingcai_7ree/template/jingcai_index_7ree.htm', './template/yunzhan_zq/common/header_common.htm', 1529560369, 'jingcai_7ree', './data/template/2_jingcai_7ree_jingcai_index_7ree.tpl.php', './source/plugin/jingcai_7ree/template', 'jingcai_index_7ree')
+|| checktplrefresh('./source/plugin/jingcai_7ree/template/jingcai_index_7ree.htm', './template/yunzhan_zq/common/header.htm', 1529664318, 'jingcai_7ree', './data/template/2_jingcai_7ree_jingcai_index_7ree.tpl.php', './source/plugin/jingcai_7ree/template', 'jingcai_index_7ree')
+|| checktplrefresh('./source/plugin/jingcai_7ree/template/jingcai_index_7ree.htm', './template/yunzhan_zq/common/footer.htm', 1529664318, 'jingcai_7ree', './data/template/2_jingcai_7ree_jingcai_index_7ree.tpl.php', './source/plugin/jingcai_7ree/template', 'jingcai_index_7ree')
+|| checktplrefresh('./source/plugin/jingcai_7ree/template/jingcai_index_7ree.htm', './template/yunzhan_zq/common/header_common.htm', 1529664318, 'jingcai_7ree', './data/template/2_jingcai_7ree_jingcai_index_7ree.tpl.php', './source/plugin/jingcai_7ree/template', 'jingcai_index_7ree')
 ;?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -150,10 +150,11 @@ EOF;
           (<?php echo $_G['member']['newprompt'];?>)
           <?php } ?>
           </a></span>
-  <span><a href="home.php?mod=spacecp&amp;ac=credit&amp;showcredit=1" id="extcreditmenu">目前積分: <?php echo $_G['member']['credits'];?></a></span>
+  <span><a href="home.php?mod=spacecp&amp;ac=credit&amp;showcredit=1" id="extcreditmenu">目前金幣: <?php echo getuserprofile('extcredits2');; ?> </a></span>
           <?php if($_G['setting']['taskon'] && !empty($_G['cookie']['taskdoing_'.$_G['uid']])) { ?>
           <span><a href="home.php?mod=task&amp;item=doing" id="task_ntc" class="new">進行中的任務</a></span>
   <span><a href="https://www.aihx888.com/home.php?mod=spacecp&amp;ac=credit&amp;op=buy">充值序號</a></span>
+
           <?php } ?>
           <a href="home.php?mod=space&amp;uid=<?php echo $_G['uid'];?>" target="_blank" title="訪問我的空間" id="umnav" class="username" onMouseOver="showMenu({'ctrlid':this.id,'ctrlclass':'a'})">
           <?php echo avatar($_G[uid],small);?>          </a> </li>
@@ -177,7 +178,7 @@ EOF;
     </div>	
     <div id="yunzhan_user">
       <ul id="yunzhan_nav">
-        <li id="login_u_box"> <span><a href="javascript:;" onClick="javascript:lsSubmit();" class="nousername">登录</a></span> <span><a href="member.php?mod=register" class="btn-register">注册</a></span> <span><a href="https://www.aihx888.com/home.php?mod=spacecp&amp;ac=credit&amp;op=buy">充值序號</a></span></li>
+        <li id="login_u_box"> <span><a href="javascript:;" onClick="javascript:lsSubmit();" class="nousername">登錄</a></span> <span><a href="member.php?mod=register" class="btn-register">註冊</a></span> <span><a href="https://www.aihx888.com/home.php?mod=spacecp&amp;ac=credit&amp;op=buy">充值序號</a></span></li>
         
   </ul>
     </div>
@@ -269,17 +270,18 @@ color:<?php echo $jingcai_7ree_var['titlecolor_7ree'];?>;
 
 <div id="ct" class="wp cl n">
 <div class="mn">
-<ul class="tb cl">
+<ul class="tb cl">			 
             <li <?php if(!$_GET['ac_7ree'] && !$_GET['finish_7ree']) { ?> class="a"<?php } ?> ><a href="<?php echo $dating_url_7ree;?>"><span>競猜大廳</span></a></li>
             <li <?php if(!$_GET['ac_7ree'] && $_GET['finish_7ree']==1) { ?> class="a"<?php } ?> ><a href="<?php echo $wangqiurl_7ree;?>"><span>往期競猜</span></a></li>
             <li <?php if(in_array($_GET['ac_7ree'],array('1','7','16','17'))) { ?> class="a"<?php } ?> id="wodejingcai_7ree" onmouseover="showMenu(this.id)"><a href="javascript:void(0);" title="領取獎勵"><span class="showmenu">個人中心</span></a></li>
-            <li <?php if(in_array($_GET['ac_7ree'],array('5','6'))) { ?> class="a"<?php } ?> id="ranklist_7ree" onmouseover="showMenu(this.id)"><a href="javascript:void(0);"><span class="showmenu">競猜排行</span></a></li>
-            <?php if($jingcai_7ree_var['fid_7ree']) { ?>
+            <li <?php if(in_array($_GET['ac_7ree'],array('5','6'))) { ?> class="a"<?php } ?> id="ranklist_7ree" onmouseover="showMenu(this.id)"><a href="javascript:void(0);"><span class="showmenu">競猜排行</span></a></li>           
+<?php if($jingcai_7ree_var['fid_7ree']) { ?>
             <li><a href="forum.php?mod=forumdisplay&amp;fid=<?php echo $jingcai_7ree_var['fid_7ree'];?>" target="_blank"><span>交流論壇</span></a></li>
             <?php } ?>
             <?php if($_G['adminid']==1 || $isadmins_7ree) { ?>
             <li <?php if($_GET['ac_7ree'] == '2') { ?> class="a"<?php } ?> ><a href="plugin.php?id=jingcai_7ree:jingcai_7ree&amp;ac_7ree=2"><span>管理員操作台</span></a></li>
             <?php } ?>
+<li><a href="https://www.aihx888.com/home.php?mod=spacecp&amp;ac=credit&amp;op=buy">充值序號</a></li>
 </ul>
 
 <ul id="wodejingcai_7ree_menu" class="p_pop" style="width:75px;display:none;">

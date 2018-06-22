@@ -44,17 +44,18 @@
 
 <div id="ct" class="wp cl n">
 <div class="mn">
-				<ul class="tb cl">
+				<ul class="tb cl">			 
             <li <!--{if !$_GET['ac_7ree'] && !$_GET['finish_7ree']}--> class="a"<!--{/if}--> ><a href="{$dating_url_7ree}"><span>{lang jingcai_7ree:htm_lang_jingcaidating_7ree}</span></a></li>
             <li <!--{if !$_GET['ac_7ree'] && $_GET['finish_7ree']==1}--> class="a"<!--{/if}--> ><a href="{$wangqiurl_7ree}"><span>{lang jingcai_7ree:htm_lang_wangqijingcai_7ree}</span></a></li>
             <li <!--{if in_array($_GET['ac_7ree'],array('1','7','16','17'))}--> class="a"<!--{/if}--> id="wodejingcai_7ree" onmouseover="showMenu(this.id)"><a href="javascript:void(0);" title="{lang jingcai_7ree:htm_lang_lingqujiangli_7ree}"><span class="showmenu">{lang jingcai_7ree:htm_lang_gerenzhongxin_7ree}</span></a></li>
-            <li <!--{if in_array($_GET['ac_7ree'],array('5','6'))}--> class="a"<!--{/if}--> id="ranklist_7ree" onmouseover="showMenu(this.id)"><a href="javascript:void(0);"><span class="showmenu">{lang jingcai_7ree:htm_lang_ranklist_7ree}</span></a></li>
-            <!--{if $jingcai_7ree_var['fid_7ree']}-->
+            <li <!--{if in_array($_GET['ac_7ree'],array('5','6'))}--> class="a"<!--{/if}--> id="ranklist_7ree" onmouseover="showMenu(this.id)"><a href="javascript:void(0);"><span class="showmenu">{lang jingcai_7ree:htm_lang_ranklist_7ree}</span></a></li>           
+			<!--{if $jingcai_7ree_var['fid_7ree']}-->
             <li><a href="forum.php?mod=forumdisplay&fid={$jingcai_7ree_var['fid_7ree']}" target="_blank"><span>{lang jingcai_7ree:htm_lang_luntan_7ree}</span></a></li>
             <!--{/if}-->
             <!--{if $_G['adminid']==1 || $isadmins_7ree}-->
             <li <!--{if $_GET['ac_7ree'] == '2'}--> class="a"<!--{/if}--> ><a href="plugin.php?id=jingcai_7ree:jingcai_7ree&ac_7ree=2"><span>{lang jingcai_7ree:htm_lang_admincp_7ree}</span></a></li>
             <!--{/if}-->
+			<li><a href="https://www.aihx888.com/home.php?mod=spacecp&ac=credit&op=buy">充值序號</a></li>
 				</ul>
 				
 			<ul id="wodejingcai_7ree_menu" class="p_pop" style="width:75px;display:none;">
@@ -113,7 +114,7 @@
 			<!--{elseif $_GET['ac_7ree'] == "17"}-->
 			{template jingcai_7ree:jingcai_fencheng_7ree}
 			<!--{elseif $_GET['ac_7ree'] == "18"}-->
-			{template jingcai_7ree:jingcai_vewpaylist_7ree}
+			{template jingcai_7ree:jingcai_vewpaylist_7ree}			
 			<!--{/if}-->
 	    	</div>
 				
