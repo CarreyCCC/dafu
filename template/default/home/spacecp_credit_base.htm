@@ -1,7 +1,29 @@
-<!--{template common/header}-->
-	<!--{subtemplate home/spacecp_header}-->
-		<!--{hook/spacecp_credit_top}-->
-		<!--{subtemplate home/spacecp_credit_header}-->
+<!--{if $_GET['mm'] == '1'}-->
+	<!--{template m/header}-->
+	<!-- header start -->
+		<header class="header">
+
+
+			<script type="text/javascript">var STYLEID = '{STYLEID}', STATICURL = '{STATICURL}', IMGDIR = '{IMGDIR}', VERHASH = '{VERHASH}', charset = '{CHARSET}', discuz_uid = '$_G[uid]', cookiepre = '{$_G[config][cookie][cookiepre]}', cookiedomain = '{$_G[config][cookie][cookiedomain]}', cookiepath = '{$_G[config][cookie][cookiepath]}', showusercard = '{$_G[setting][showusercard]}', attackevasive = '{$_G[config][security][attackevasive]}', disallowfloat = '{$_G[setting][disallowfloat]}', creditnotice = '<!--{if $_G['setting']['creditnotice']}-->$_G['setting']['creditnames']<!--{/if}-->', defaultstyle = '$_G[style][defaultextstyle]', REPORTURL = '$_G[currenturl_encode]', SITEURL = '$_G[siteurl]', JSPATH = '$_G[setting][jspath]', CSSPATH = '$_G[setting][csspath]', DYNAMICURL = '$_G[dynamicurl]';</script>
+			<script type="text/javascript" src="{$_G[setting][jspath]}common.js?{VERHASH}"></script>
+
+
+		    <div class="nav">
+				<a href="javascript:;" onclick="history.go(-1);" class="z"><img src="static/image/mobile/images/icon_back.png" /></a>
+				<span>回到體育競猜網</span>
+		    </div>
+
+		    <style type="text/css">
+			td {
+			    height: 50px;
+			}
+			</style>
+		</header>
+<!-- header end -->
+<!--{else}-->
+	<!--{template common/header}-->
+<!--{/if}-->
+
 
 		<!--{if in_array($_GET['op'], array('base', 'buy', 'transfer', 'exchange'))}-->
 			<ul class="creditl mtm bbda cl">
@@ -61,7 +83,7 @@
 				<input type="hidden" name="handlekey" value="buycredit" />
 				<table cellspacing="0" cellpadding="0" class="tfm mtn">
 					<tr>
-						<th>{lang mode_of_payment}</th>
+						<th>參加活動方式</th>
 						<td colspan="2">
 							<!--{if $_G[setting][ec_ratio] && ($_G[setting][ec_tenpay_bargainor] || $_G[setting][ec_tenpay_opentrans_chnid])}-->
 								<div class="mbm pbn bbda cl">
@@ -83,44 +105,36 @@
 								<!--{/if}-->
 								<!--{if $_G[setting][card][open]}-->
 									<li>
-										<input name="bank_type" type="radio" value="card" id="apitype_card" class="vm" $ecchecked  onclick="activatecardbox();" /><label class="vm" style="padding-left:10px;width:125px;height:32px;line-height:32px;background:#FFF;border:1px solid #DDD;display:inline-block;" onclick="activatecardbox();"><span class="xs2">{lang card_credit}</span></label>
+										<input name="bank_type" type="radio" value="card" id="apitype_card" class="vm" checked /><label class="vm" style="padding-left:10px;width:125px;height:32px;line-height:32px;background:#FFF;border:1px solid #DDD;display:inline-block;" onclick="activatecardbox();"><span class="xs2">活動序號輸入</span></label>
 									</li>
 								<!--{/if}-->
 								</ul>
 							</div>
 						</td>
 					</tr>
-					<tr id="paybox" style="{if ($_G[setting][ec_tenpay_bargainor] || $_G[setting][ec_tenpay_opentrans_chnid] || $_G[setting][ec_account]) && empty($ecchecked) }display:;{else}display:none;{/if}">
-						<th>{lang memcp_credits_addfunds}</th>
-						<td class="pns">
-							<input type="text" size="5" class="px" style="width: auto;" id="addfundamount" name="addfundamount" value="0" onkeyup="addcalcredit()" />
-							&nbsp;{$_G[setting][extcredits][$_G[setting][creditstrans]][title]}&nbsp;
-							{lang credits_need}&nbsp;{lang memcp_credits_addfunds_caculate_radio}
-						</td>
-						<td width="300" class="d">
-							{lang memcp_credits_addfunds_rules_ratio} =  <strong>$_G[setting][ec_ratio]</strong> {$_G[setting][extcredits][$_G[setting][creditstrans]][unit]}{$_G[setting][extcredits][$_G[setting][creditstrans]][title]}
-							<!--{if $_G[setting][ec_mincredits]}--><br />{lang memcp_credits_addfunds_rules_min}  <strong>$_G[setting][ec_mincredits]</strong> {$_G[setting][extcredits][$_G[setting][creditstrans]][unit]}{$_G[setting][extcredits][$_G[setting][creditstrans]][title]}<!--{/if}-->
-							<!--{if $_G[setting][ec_maxcredits]}--><br />{lang memcp_credits_addfunds_rules_max}  <strong>$_G[setting][ec_maxcredits]</strong> {$_G[setting][extcredits][$_G[setting][creditstrans]][unit]}{$_G[setting][extcredits][$_G[setting][creditstrans]][title]}<!--{/if}-->
-							<!--{if $_G[setting][ec_maxcreditspermonth]}--><br />{lang memcp_credits_addfunds_rules_month}  <strong>$_G[setting][ec_maxcreditspermonth]</strong> {$_G[setting][extcredits][$_G[setting][creditstrans]][unit]}{$_G[setting][extcredits][$_G[setting][creditstrans]][title]}<!--{/if}-->
-						</td>
-					</tr>
 					<!--{if $_G[setting][card][open]}-->
-						<tr id="cardbox" style="{if $_G[setting][card][open] && $ecchecked}display:;{else}display:none;{/if}">
-							<th>{lang card}</th>
+						<tr id="cardbox">
+							<th>活動序號</th>
 							<td colspan="2">
 								<input type="text" class="px" id="cardid" name="cardid" />
 							</td>
 						</tr>
-						<!--{if $seccodecheck}-->
+
+						
 							</table>
-							<!--{block sectpl}--><table id="card_box_sec" style="{if $_G[setting][card][open] && $ecchecked}display:;{else}display:none;{/if}" cellspacing="0" cellpadding="0" class="tfm mtn"><tr><th><sec></th><td colspan="2"><span id="sec<hash>" onclick="showMenu({'ctrlid':this.id,'win':'{$_GET[handlekey]}'})"><sec></span><div id="sec<hash>_menu" class="p_pop p_opt" style="display:none"><sec></div></td></tr></table><!--{/block}-->
+							<!--{block sectpl}--><table id="card_box_sec" cellspacing="0" cellpadding="0" class="tfm mtn"><tr><th><sec></th><td colspan="2"><span id="sec<hash>" onclick="showMenu({'ctrlid':this.id,'win':'{$_GET[handlekey]}'})"><sec></span><div id="sec<hash>_menu" class="p_pop p_opt" style="display:none"><sec></div></td></tr></table><!--{/block}-->
 							<!--{subtemplate common/seccheck}-->
 							<table cellspacing="0" cellpadding="0" class="tfm mtn">
-						<!--{/if}-->
+						
 					<!--{/if}-->
 					<tr>
 						<th>&nbsp;</th>
 						<td colspan="2">
+							</br>
+							</br>
+							</br>
+							</br>
+							</br>
 							<button type="submit" name="addfundssubmit_btn" class="pn" id="addfundssubmit_btn" value="true"><em>{lang memcp_credits_addfunds}</em></button>
 						</td>
 					</tr>
@@ -141,7 +155,6 @@
 					if($('card_box_sec')){
 						$('card_box_sec').style.display='';
 					}
-					$('paybox').style.display='none';
 				}
 				<!--{/if}-->
 			</script>
@@ -349,8 +362,5 @@
 		<!--{hook/spacecp_credit_bottom}-->
 		</div>
 	</div>
-	<div class="appl">
-		<!--{subtemplate home/spacecp_footer}-->
-	</div>
 </div>
-<!--{template common/footer}-->
+

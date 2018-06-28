@@ -792,7 +792,7 @@ button {
 
 header {
   color: #fff;
-  background-color: #124191;
+  background: url('https://www.aihx888.com/source/plugin/jingcai_7ree/template/touch/image/bottom_bg.jpg') no-repeat scroll left center;
 }
 
 .info__img {
@@ -855,7 +855,8 @@ header {
 
 #event {
   background-color: #F6F8F9;
-  position: relative;top: -88px
+ /* position: relative;top: -88px */
+
 }
 
 #event .title-style--bg {
@@ -878,13 +879,14 @@ header {
 .event-info {
   position: relative;
   display: block;
+  line-height: 30px;
 }
 
 .event__list {
   position: relative;
   padding-left: 106px;
   margin-bottom: 20px;
-  font-size: 18px;
+  font-size: 16px;
   color: #444;
 }
 
@@ -1135,13 +1137,17 @@ footer p {
 
 #L_header {
 
-    position: relative;
+    position: relative;background: #fff;
 /*    top: -88px; */
-	background: #fff;
-
+	
 }
 
+.landing {
 
+    width: 90%;
+    margin: auto;
+
+}
 
 
 

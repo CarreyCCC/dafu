@@ -7,7 +7,7 @@
             <li><a href="<?php echo $wangqiurl_7ree;?>" class="wangqi_7ree <?php if(!$_GET['ac_7ree'] && $_GET['finish_7ree']) { ?>now_7ree<?php } ?>">往期競猜</a></li>
             <li><a href="<?php echo $wdjc_url_7ree;?>" class="wode_7ree <?php if($_GET['ac_7ree']==1) { ?>now_7ree<?php } ?>">我的競猜</a></li>
             <li><a href="javascript:void(0);" onclick='navmenu_7ree();' class="paihang_7ree <?php if($_GET['ac_7ree']==6) { ?>now_7ree<?php } ?>">競猜排行</a></li>
-<li><a href="https://www.aihx888.com/home.php?mod=spacecp&amp;ac=credit&amp;op=buy" class="wode_7ree">序號充值</a></li>
+<li><a href="https://www.aihx888.com/home.php?mod=spacecp&amp;ac=credit&amp;op=buy&amp;mm=1" class="coin_7ree">序號充值</a></li>
 </ul>
 </div>
 </div>

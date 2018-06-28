@@ -1,6 +1,6 @@
 <?php if(!defined('IN_DISCUZ')) exit('Access Denied'); hookscriptoutput('login');
 0
-|| checktplrefresh('./template/default/touch/member/login.htm', './template/default/touch/common/seccheck.htm', 1529676637, '1', './data/template/1_1_touch_member_login.tpl.php', './template/default', 'touch/member/login')
+|| checktplrefresh('./template/default/touch/member/login.htm', './template/default/touch/common/seccheck.htm', 1530155969, '1', './data/template/1_1_touch_member_login.tpl.php', './template/default', 'touch/member/login')
 ;?><?php include template('common/header'); if(!$_GET['infloat']) { ?>
 
 <!-- header start -->

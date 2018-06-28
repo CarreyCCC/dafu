@@ -237,7 +237,9 @@ tr.colplural {background-color:#111;}
 	background: url(icon_bg.png) no-repeat 50% -239px;
 }
 
-
+.footnav_7ree li a.coin_7ree {
+	background: url(icon_bg.png) no-repeat 50% -39px;
+}
 
 
 .now_7ree{

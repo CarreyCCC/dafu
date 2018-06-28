@@ -1,8 +1,8 @@
 <?php if(!defined('IN_DISCUZ')) exit('Access Denied'); hookscriptoutput('jingcai_index_7ree');
 0
-|| checktplrefresh('./source/plugin/jingcai_7ree/template/jingcai_index_7ree.htm', './template/yunzhan_zq/common/header.htm', 1529664318, 'jingcai_7ree', './data/template/2_jingcai_7ree_jingcai_index_7ree.tpl.php', './source/plugin/jingcai_7ree/template', 'jingcai_index_7ree')
-|| checktplrefresh('./source/plugin/jingcai_7ree/template/jingcai_index_7ree.htm', './template/yunzhan_zq/common/footer.htm', 1529664318, 'jingcai_7ree', './data/template/2_jingcai_7ree_jingcai_index_7ree.tpl.php', './source/plugin/jingcai_7ree/template', 'jingcai_index_7ree')
-|| checktplrefresh('./source/plugin/jingcai_7ree/template/jingcai_index_7ree.htm', './template/yunzhan_zq/common/header_common.htm', 1529664318, 'jingcai_7ree', './data/template/2_jingcai_7ree_jingcai_index_7ree.tpl.php', './source/plugin/jingcai_7ree/template', 'jingcai_index_7ree')
+|| checktplrefresh('./source/plugin/jingcai_7ree/template/jingcai_index_7ree.htm', './template/yunzhan_zq/common/header.htm', 1530155797, 'jingcai_7ree', './data/template/2_jingcai_7ree_jingcai_index_7ree.tpl.php', './source/plugin/jingcai_7ree/template', 'jingcai_index_7ree')
+|| checktplrefresh('./source/plugin/jingcai_7ree/template/jingcai_index_7ree.htm', './template/yunzhan_zq/common/footer.htm', 1530155797, 'jingcai_7ree', './data/template/2_jingcai_7ree_jingcai_index_7ree.tpl.php', './source/plugin/jingcai_7ree/template', 'jingcai_index_7ree')
+|| checktplrefresh('./source/plugin/jingcai_7ree/template/jingcai_index_7ree.htm', './template/yunzhan_zq/common/header_common.htm', 1530155797, 'jingcai_7ree', './data/template/2_jingcai_7ree_jingcai_index_7ree.tpl.php', './source/plugin/jingcai_7ree/template', 'jingcai_index_7ree')
 ;?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -255,7 +255,7 @@ color:<?php echo $jingcai_7ree_var['titlecolor_7ree'];?>;
 
 <?php if(!$_GET['sp_7ree']) { if($jingcai_7ree_var['ad_img_7ree'] && !$_GET['finish_7ree'] && !$_GET['page']) { ?>
 
-<div class="banner123" style="background-image: url(<?php echo $jingcai_7ree_var['ad_img_7ree'];?>);background-repeat:no-repeat;background-position:center;">
+<div class="banner123" style="background-image: url(https://www.aihx888.com/source/plugin/jingcai_7ree/template/image/banner-0624.jpg);background-repeat:no-repeat;background-position:center;">
 <a <?php if($jingcai_7ree_var['ad_url_7ree']) { ?>href="<?php echo $jingcai_7ree_var['ad_url_7ree'];?>" target="_blank"<?php } else { ?>href="javascript:;"<?php } ?> style="display:block;width:820px;height:350px;float:left;">
 </a>
 <?php if($jingcai_7ree_var['touchon_7ree'] && $qrimg_7ree) { ?>

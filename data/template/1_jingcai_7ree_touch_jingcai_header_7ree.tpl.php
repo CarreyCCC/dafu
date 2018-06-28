@@ -29,8 +29,12 @@
 <?php } else { } } ?>
 </span>
 <div style="float: right;padding-right: 10px;font-size: 12px;color: white;position: absolute;z-index: 1001;top: 14px;right: 10px;">
-<a title="登錄" style="color:white" href="member.php?mod=logging&amp;action=login&amp;mobile=2">登錄</a> | <a style="color:white" href="member.php?mod=register&amp;mobile=2" title="立即註冊">註冊</a>
 
+<?php if(!$_G['uid'] && !$_G['connectguest']) { ?>
+<a href="https://aihx888.com/"style="color:white" >首頁</a> | <a href="member.php?mod=logging&amp;action=login" style="color:white" title="登錄">登錄</a> | <a href="<?php if($_G['setting']['regstatus']) { ?>member.php?mod=<?php echo $_G['setting']['regname'];?><?php } else { ?>javascript:;" style="color:#D7D7D7;<?php } ?>" title="<?php echo $_G['setting']['reglinkname'];?>" style="color:white">註冊</a>
+<?php } else { ?>
+<a href="https://aihx888.com/"style="color:white" >首頁</a> |<a href="home.php?mod=space&amp;uid=<?php echo $_G['uid'];?>&amp;do=profile&amp;mycenter=1"style="color:white" ><?php echo $_G['member']['username'];?></a> , <a href="member.php?mod=logging&amp;action=logout&amp;formhash=<?php echo FORMHASH;?>" title="退出" class="dialog"style="color:white">退出</a>
+<?php } ?>
 </div>
 
 </div>
