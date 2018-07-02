@@ -20,3 +20,4 @@
 <?PHP exit;?>	admin	36.226.219.226	1529978129	user_delete	uid=25
 <?PHP exit;?>	admin	36.226.219.226	1529978135	user_delete	uid=8
 <?PHP exit;?>	admin	36.226.219.226	1529978148	user_delete	uid=27
+<?PHP exit;?>	UCenterAdministrator	36.224.193.228	1530196104	login	succeed

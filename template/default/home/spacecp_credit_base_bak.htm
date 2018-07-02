@@ -23,7 +23,7 @@
 <!--{else}-->
 	<!--{template common/header}-->
 <!--{/if}-->
-<div style="padding:50px;">
+
 
 		<!--{if in_array($_GET['op'], array('base', 'buy', 'transfer', 'exchange'))}-->
 			<ul class="creditl mtm bbda cl">
@@ -32,12 +32,12 @@
 				<!--{eval $creditid=$_G['setting']['creditstrans'];}-->
 				<!--{if $_G['setting']['extcredits'][$creditid]}-->
 				<!--{eval $credit=$_G['setting']['extcredits'][$creditid]; }-->
-				<li class="xi1 cl"><em><!--{if $credit[img]}--> {$credit[img]}<!--{/if}--> 目前金幣: </em><!--{echo getuserprofile('extcredits'.$creditid);}--> {$credit[unit]} &nbsp; <!--{if ($_G['setting']['ec_ratio'] && ($_G['setting']['ec_tenpay_opentrans_chnid'] || $_G['setting'][ec_tenpay_bargainor] || $_G['setting']['ec_account'])) || $_G['setting']['card']['open']}--><a href="home.php?mod=spacecp&ac=credit&op=buy" class="xi2">{lang card_use}&raquo;</a><!--{/if}--></li>
+				<li class="xi1 cl"><em><!--{if $credit[img]}--> {$credit[img]}<!--{/if}--> {$credit[title]}: </em><!--{echo getuserprofile('extcredits'.$creditid);}--> {$credit[unit]} &nbsp; <!--{if ($_G['setting']['ec_ratio'] && ($_G['setting']['ec_tenpay_opentrans_chnid'] || $_G['setting'][ec_tenpay_bargainor] || $_G['setting']['ec_account'])) || $_G['setting']['card']['open']}--><a href="home.php?mod=spacecp&ac=credit&op=buy" class="xi2">{lang card_use}&raquo;</a><!--{/if}--></li>
 				<!--{/if}-->
 			<!--{/if}-->
 			<!--{loop $_G['setting']['extcredits'] $id $credit}-->
 				<!--{if $id!=$creditid}-->
-				<li><em><!--{if $credit[img]}--> {$credit[img]}<!--{/if}--> 目前金幣: </em><!--{echo getuserprofile('extcredits'.$id);}--> {$credit[unit]}</li>
+				<li><em><!--{if $credit[img]}--> {$credit[img]}<!--{/if}--> {$credit[title]}: </em><!--{echo getuserprofile('extcredits'.$id);}--> {$credit[unit]}</li>
 				<!--{/if}-->
 			<!--{/loop}-->
 			<!--{if  $_GET['op'] == 'base'}-->
@@ -82,7 +82,7 @@
 				<input type="hidden" name="addfundssubmit" value="true" />
 				<input type="hidden" name="handlekey" value="buycredit" />
 				<table cellspacing="0" cellpadding="0" class="tfm mtn">
-					<tr  style="display:none">
+					<tr>
 						<th>參加活動方式</th>
 						<td colspan="2">
 							<!--{if $_G[setting][ec_ratio] && ($_G[setting][ec_tenpay_bargainor] || $_G[setting][ec_tenpay_opentrans_chnid])}-->
@@ -114,25 +114,28 @@
 					</tr>
 					<!--{if $_G[setting][card][open]}-->
 						<tr id="cardbox">
-							<th style="padding-right: 20px;width:70px">活動序號</th>
-							<td colspan="2" style="padding-right:20px">
+							<th>活動序號</th>
+							<td colspan="2">
 								<input type="text" class="px" id="cardid" name="cardid" />
 							</td>
 						</tr>
 
 						
 							</table>
-							<!--{block sectpl}--><table id="card_box_sec" cellspacing="0" cellpadding="0" class="tfm mtn"><tr><th style="padding-right: 20px;width:70px" ><sec></th><td colspan="2"><span id="sec<hash>" onclick="showMenu({'ctrlid':this.id,'win':'{$_GET[handlekey]}'})"><sec></span><div id="sec<hash>_menu" class="p_pop p_opt" style="display:none"><sec></div></td></tr></table><!--{/block}-->
+							<!--{block sectpl}--><table id="card_box_sec" cellspacing="0" cellpadding="0" class="tfm mtn"><tr><th><sec></th><td colspan="2"><span id="sec<hash>" onclick="showMenu({'ctrlid':this.id,'win':'{$_GET[handlekey]}'})"><sec></span><div id="sec<hash>_menu" class="p_pop p_opt" style="display:none"><sec></div></td></tr></table><!--{/block}-->
 							<!--{subtemplate common/seccheck}-->
-							<table cellspacing="0" cellpadding="0" class="tfm mtn" style="width: 100%;">
+							<table cellspacing="0" cellpadding="0" class="tfm mtn">
 						
 					<!--{/if}-->
 					<tr>
 						<th>&nbsp;</th>
 						<td colspan="2">
-							<div  style="position: relative;padding-top: 30px; text-align:center;">
-							<button type="submit" name="addfundssubmit_btn" style="width: 100px;height: 50px;background-image: url(https://www.aihx888.com/source/plugin/jingcai_7ree/template/image/009a.png)" id="addfundssubmit_btn" value="true"><em>{lang memcp_credits_addfunds}</em></button>
-							</div>
+							</br>
+							</br>
+							</br>
+							</br>
+							</br>
+							<button type="submit" name="addfundssubmit_btn" class="pn" id="addfundssubmit_btn" value="true"><em>{lang memcp_credits_addfunds}</em></button>
 						</td>
 					</tr>
 
@@ -360,4 +363,4 @@
 		</div>
 	</div>
 </div>
-</div>
+

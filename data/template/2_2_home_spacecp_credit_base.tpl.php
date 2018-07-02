@@ -1,6 +1,6 @@
 <?php if(!defined('IN_DISCUZ')) exit('Access Denied'); hookscriptoutput('spacecp_credit_base');
 0
-|| checktplrefresh('./template/default/home/spacecp_credit_base.htm', './template/default/common/seccheck.htm', 1530175794, '2', './data/template/2_2_home_spacecp_credit_base.tpl.php', './template/yunzhan_zq', 'home/spacecp_credit_base')
+|| checktplrefresh('./template/default/home/spacecp_credit_base.htm', './template/default/common/seccheck.htm', 1530511598, '2', './data/template/2_2_home_spacecp_credit_base.tpl.php', './template/yunzhan_zq', 'home/spacecp_credit_base')
 ;?>
 <?php if($_GET['mm'] == '1') { include template('m/header'); ?><!-- header start -->
 <header class="header">
@@ -14,12 +14,21 @@
 <a href="javascript:;" onclick="history.go(-1);" class="z"><img src="static/image/mobile/images/icon_back.png" /></a>
 <span>回到體育競猜網</span>
     </div>
+
+    <style type="text/css">
+td {
+    height: 50px;
+}
+</style>
 </header>
 <!-- header end -->
-<?php } else { include template('common/header'); } if(in_array($_GET['op'], array('base', 'buy', 'transfer', 'exchange'))) { ?>
-<ul class="creditl mtm bbda cl"><?php $creditid=0;?><?php if($_GET['op'] == 'base' && $_G['setting']['creditstrans']) { $creditid=$_G['setting']['creditstrans'];?><?php if($_G['setting']['extcredits'][$creditid]) { $credit=$_G['setting']['extcredits'][$creditid];?><li class="xi1 cl"><em><?php if($credit['img']) { ?> <?php echo $credit['img'];?><?php } ?> <?php echo $credit['title'];?>: </em><?php echo getuserprofile('extcredits'.$creditid);; ?> <?php echo $credit['unit'];?> &nbsp; <?php if(($_G['setting']['ec_ratio'] && ($_G['setting']['ec_tenpay_opentrans_chnid'] || $_G['setting']['ec_tenpay_bargainor'] || $_G['setting']['ec_account'])) || $_G['setting']['card']['open']) { ?><a href="home.php?mod=spacecp&amp;ac=credit&amp;op=buy" class="xi2">立即充值&raquo;</a><?php } ?></li>
+<?php } else { include template('common/header'); } ?>
+<div style="padding:50px;">
+
+<?php if(in_array($_GET['op'], array('base', 'buy', 'transfer', 'exchange'))) { ?>
+<ul class="creditl mtm bbda cl"><?php $creditid=0;?><?php if($_GET['op'] == 'base' && $_G['setting']['creditstrans']) { $creditid=$_G['setting']['creditstrans'];?><?php if($_G['setting']['extcredits'][$creditid]) { $credit=$_G['setting']['extcredits'][$creditid];?><li class="xi1 cl"><em><?php if($credit['img']) { ?> <?php echo $credit['img'];?><?php } ?> 目前金幣: </em><?php echo getuserprofile('extcredits'.$creditid);; ?> <?php echo $credit['unit'];?> &nbsp; <?php if(($_G['setting']['ec_ratio'] && ($_G['setting']['ec_tenpay_opentrans_chnid'] || $_G['setting']['ec_tenpay_bargainor'] || $_G['setting']['ec_account'])) || $_G['setting']['card']['open']) { ?><a href="home.php?mod=spacecp&amp;ac=credit&amp;op=buy" class="xi2">立即充值&raquo;</a><?php } ?></li>
 <?php } } if(is_array($_G['setting']['extcredits'])) foreach($_G['setting']['extcredits'] as $id => $credit) { if($id!=$creditid) { ?>
-<li><em><?php if($credit['img']) { ?> <?php echo $credit['img'];?><?php } ?> <?php echo $credit['title'];?>: </em><?php echo getuserprofile('extcredits'.$id);; ?> <?php echo $credit['unit'];?></li>
+<li><em><?php if($credit['img']) { ?> <?php echo $credit['img'];?><?php } ?> 目前金幣: </em><?php echo getuserprofile('extcredits'.$id);; ?> <?php echo $credit['unit'];?></li>
 <?php } } if($_GET['op'] == 'base') { ?>
 <li class="cl"><em>積分: </em><?php echo $_G['member']['credits'];?> <span class="xg1">( <?php echo $creditsformulaexp;?> )</span></li>
 <?php } ?>
@@ -55,7 +64,7 @@
 <input type="hidden" name="addfundssubmit" value="true" />
 <input type="hidden" name="handlekey" value="buycredit" />
 <table cellspacing="0" cellpadding="0" class="tfm mtn">
-<tr>
+<tr  style="display:none">
 <th>參加活動方式</th>
 <td colspan="2">
 <?php if($_G['setting']['ec_ratio'] && ($_G['setting']['ec_tenpay_bargainor'] || $_G['setting']['ec_tenpay_opentrans_chnid'])) { ?>
@@ -86,8 +95,8 @@ appendscript('http://union.tenpay.com/bankList/bank.js', '');
 </tr>
 <?php if($_G['setting']['card']['open']) { ?>
 <tr id="cardbox">
-<th>活動序號</th>
-<td colspan="2">
+<th style="padding-right: 20px;width:70px">活動序號</th>
+<td colspan="2" style="padding-right:20px">
 <input type="text" class="px" id="cardid" name="cardid" />
 </td>
 </tr>
@@ -95,7 +104,7 @@ appendscript('http://union.tenpay.com/bankList/bank.js', '');
 
 </table><?php
 $sectpl = <<<EOF
-<table id="card_box_sec" cellspacing="0" cellpadding="0" class="tfm mtn"><tr><th><sec></th><td colspan="2"><span id="sec<hash>" onclick="showMenu({'ctrlid':this.id,'win':'{$_GET['handlekey']}'})"><sec></span><div id="sec<hash>_menu" class="p_pop p_opt" style="display:none"><sec></div></td></tr></table>
+<table id="card_box_sec" cellspacing="0" cellpadding="0" class="tfm mtn"><tr><th style="padding-right: 20px;width:70px" ><sec></th><td colspan="2"><span id="sec<hash>" onclick="showMenu({'ctrlid':this.id,'win':'{$_GET['handlekey']}'})"><sec></span><div id="sec<hash>_menu" class="p_pop p_opt" style="display:none"><sec></div></td></tr></table>
 EOF;
 ?><?php $sechash = !isset($sechash) ? 'S'.($_G['inajax'] ? 'A' : '').$_G['sid'] : $sechash.random(3);
 $sectpl = str_replace("'", "\'", $sectpl);?><?php if($secqaacheck) { ?>
@@ -104,18 +113,15 @@ $sectpl = str_replace("'", "\'", $sectpl);?><?php if($secqaacheck) { ?>
 <?php } if($seccodecheck) { ?>
 <span id="seccode_c<?php echo $sechash;?>"></span>		
 <script type="text/javascript" reload="1">updateseccode('c<?php echo $sechash;?>', '<?php echo $sectpl;?>', '<?php echo $_G['basescript'];?>::<?php echo CURMODULE;?>');</script>
-<?php } ?><table cellspacing="0" cellpadding="0" class="tfm mtn">
+<?php } ?><table cellspacing="0" cellpadding="0" class="tfm mtn" style="width: 100%;">
 
 <?php } ?>
 <tr>
 <th>&nbsp;</th>
 <td colspan="2">
-</br>
-</br>
-</br>
-</br>
-</br>
-<button type="submit" name="addfundssubmit_btn" class="pn" id="addfundssubmit_btn" value="true"><em>充值</em></button>
+<div  style="position: relative;padding-top: 30px; text-align:center;">
+<button type="submit" name="addfundssubmit_btn" style="width: 100px;height: 50px;background-image: url(https://www.aihx888.com/source/plugin/jingcai_7ree/template/image/009a.png)" id="addfundssubmit_btn" value="true"><em>充值</em></button>
+</div>
 </td>
 </tr>
 
@@ -302,4 +308,4 @@ exchangecalcredit();
 </div>
 </div>
 </div>
-
+</div>

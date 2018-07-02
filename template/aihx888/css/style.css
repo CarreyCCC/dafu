@@ -86,7 +86,7 @@ button {
 }
 
 .section--bg {
-  background-color: #EDF3F5;
+  background-color: #EDF3F5; 
 }
 
 .title-style {
@@ -542,19 +542,19 @@ header {
 }
 
 .table {
-  background-color: #ebeef0;
+  background-color: #ffffff;
 }
 
 .table > tbody > tr > td,
 .table > thead > tr > th {
   padding: 12px;
   border-top: none;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid #666666;
 }
 
 .table > tbody > tr > td:first-child,
 .table > thead > tr > th:first-child {
-  width: 140px;
+  width: 25%;
   padding-left: 19px;
 }
 
@@ -674,22 +674,7 @@ footer p {
 }
 
 @media screen and (max-width: 639px) {
-  thead {
-    display: none;
-  }
-  .table > tbody > tr > td {
-    display: block;
-    width: 100%;
-    border: none;
-  }
-  .table > tbody > tr > td:first-child {
-    width: 100%;
-    padding: 8px 12px;
-    text-align: center;
-    color: #fff;
-    background-color: #444;
-  }
-}
+
 
 @media screen and (max-width: 480px) {
   .otherprize {

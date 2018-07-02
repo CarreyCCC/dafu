@@ -15,3 +15,4 @@
 <?PHP exit;?>	1529831345	admin	1	yy1234	2	9900	0		
 <?PHP exit;?>	1529841206	admin	1	qq123	2	1000	0		
 <?PHP exit;?>	1530088681	admin	1	Shih-WeiSu	2	10000	0		
+<?PHP exit;?>	1530238403	admin	1	walt	2	99900	0		
